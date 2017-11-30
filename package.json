@@ -1,0 +1,49 @@
+{
+  "name": "vivienkaufinger",
+  "version": "0.0.1",
+  "description": "My personal website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Vivien KAUFINGER",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "del": "^3.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-browserify2": "0.0.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-svgstore": "^6.0.0",
+    "gulp-twig": "^1.1.1",
+    "gulp-uglify-es": "^0.1.4",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "bubble-event": "^1.0.10",
+    "gsap": "^1.20.3",
+    "ismobilejs": "^0.4.1",
+    "minireset.css": "0.0.3",
+    "pjax": "^0.2.4",
+    "request-interval": "^2.0.0",
+    "throttle-debounce": "^1.0.1"
+  }
+}

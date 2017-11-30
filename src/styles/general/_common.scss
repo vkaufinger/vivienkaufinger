@@ -1,0 +1,42 @@
+html {
+    font-size: 62.5%; // Equivalent 1em = 10px
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+    color: colors(text);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// If you forgot the 'alt' attribute
+img[alt=""],
+img:not([alt]) {
+    border: 5px dashed red;
+}
+
+.svg-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+// Add loader on cursor
+.js-ajax-loading * {
+    cursor: wait !important;
+}
+
+// Unbind data-ajax-link children
+.js-ajax-link {
+    * {
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,28 @@
+$colors: (
+    // background: #0B3151,
+    // highlight:  #FFF372,
+    // text:       #FFF,
+);
+
+@function colors($name) {
+	@return map-get($colors, $name);
+}
+
+$breakpoints: (
+	sm: 48em,
+    md: 64em,
+    lg: 75em
+);
+
+@function breakpoints($name) {
+	@return map-get($breakpoints, $name);
+}
+
+$fonts: (
+	// league: #{"League Spartan", "Helvetica", "Arial", sans-serif},
+);
+
+@function fonts($name) {
+	@return map-get($fonts, $name);
+}
+

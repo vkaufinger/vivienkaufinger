@@ -1,0 +1,24 @@
+{
+    "siteRoot": "http://localhost:8888/vivienkaufinger/",
+    "siteTitle" : "Vivien Kaufinger - Creative developer",
+    "siteDescription": "Vivien Kaufinger - Creative developer based in Paris. I create websites with creativity, perfs and accessibility.",
+    "imgPath": "//localhost:8888/vivienkaufinger/dist/images",
+    "trackingID": "",
+    "projects": [
+        {
+            "title": "Example",
+            "poster": "",
+            "client": "",
+            "team": "",
+            "year": "",
+            "solution": "",
+            "url": ""
+        }
+    ],
+    "links": {
+        "mail": "contact@vivienkaufinger.com",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+    }
+}

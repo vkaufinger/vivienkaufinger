@@ -1,0 +1,24 @@
+{% set page = {
+    'name': 'home'
+} %}
+
+{% extends 'includes/_base.twig' %}
+
+{% block content %}
+	<section>
+		<h2>
+			{{- 'Selected projects' -}}
+		</h2>
+		{% for project in data.projects %}
+			<article>
+				<header>
+					<h3>
+						<a class="js-ajax-link" href="{{ data.siteRoot }}projects/{{ project.title|lower|replace({ "&nbsp;" : "-", "'" : "-", "." : "-" }) }}">
+							{{- project.title -}}
+						</a>
+					</h3>
+				</header>
+			</article>
+		{% endfor %}
+	</section>
+{% endblock content %}

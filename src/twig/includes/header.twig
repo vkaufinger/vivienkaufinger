@@ -1,0 +1,15 @@
+<header class="header">
+    {%- if page.name == 'home' -%}
+        <h1>
+    {%- endif -%}
+    <a class="js-ajax-link  js-nav-link{% if page.name == 'home' %}  is-active{% endif %}" href="{{ data.siteRoot }}">
+            {{- 'Vivien&nbsp;Kaufinger' -}}
+        </a>
+    {%- if page.name == 'home' -%}
+        </h1>
+    {%- endif -%}
+    <a class="js-ajax-link  js-nav-link{% if page.name == 'about' %}  is-active{% endif %}" href="{{ data.siteRoot }}about">
+        {{- 'About' -}}
+    </a>
+
+</header>

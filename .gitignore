@@ -1,0 +1,23 @@
+# General
+.svn
+*.DS_Store
+._*
+
+# Systems noise
+.DS_Store
+.AppleDouble
+.LSOverride
+.directory
+.Trash-*
+Desktop.ini
+
+# IDE Junk
+.idea/
+nbproject/
+
+# Project
+node_modules/
+dist/
+*.html
+
+!.gitkeep

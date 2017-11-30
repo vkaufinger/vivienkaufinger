@@ -1,0 +1,12 @@
+{% set projectID = 0 %}
+
+{% set page = {
+    'name': 'single-project',
+    'title': data.projects[projectID].title,
+} %}
+
+{% extends '../includes/_base.twig' %}
+
+{% block content %}
+    {% include '../includes/single-project.twig' with { 'id' : projectID } %}
+{% endblock content %}
