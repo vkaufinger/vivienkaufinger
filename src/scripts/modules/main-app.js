@@ -7,7 +7,8 @@
     var myModule = function () {
         var debounce = require('throttle-debounce/debounce');
         var modules = [
-            require('./ajax-navigation'),
+            require('./utils'),
+            require('./ajax-navigation')
         ];
 
         /**

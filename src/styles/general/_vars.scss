@@ -19,7 +19,7 @@ $breakpoints: (
 }
 
 $fonts: (
-	// league: #{"League Spartan", "Helvetica", "Arial", sans-serif},
+	league: #{"League Spartan", "Helvetica", "Arial", sans-serif},
 );
 
 @function fonts($name) {

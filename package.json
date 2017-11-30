@@ -37,8 +37,8 @@
     "jshint-stylish": "^2.2.1"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
     "bubble-event": "^1.0.10",
+    "fontfaceobserver": "^2.0.13",
     "gsap": "^1.20.3",
     "ismobilejs": "^0.4.1",
     "minireset.css": "0.0.3",
