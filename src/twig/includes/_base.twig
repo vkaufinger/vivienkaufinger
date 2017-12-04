@@ -56,9 +56,9 @@
         <div id="ajax-wrapper" class="{{ page.name }}" data-ajax-current="{{ page.name }}">
             {% include './header.twig' %}
 
-            <div id="ajax-content">
+            <main id="ajax-content">
                 {% block content %}{% endblock content %}
-            </div>
+            </main>
 
             {% include './footer.twig' %}
         </div>
