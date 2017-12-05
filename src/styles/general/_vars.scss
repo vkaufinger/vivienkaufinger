@@ -8,15 +8,14 @@ $colors: (
 	@return map-get($colors, $name);
 }
 
-$breakpoints: (
-	sm: 48em,
-    md: 64em,
-    lg: 75em
+// Responsive settings -> https://github.com/sass-mq/sass-mq
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  768px,
+    desktop: 1024px,
+    wide:    1200px,
 );
-
-@function breakpoints($name) {
-	@return map-get($breakpoints, $name);
-}
+$mq-show-breakpoints: (mobile, tablet, desktop, wide);
 
 $fonts: (
 	league: #{"League Spartan", "Helvetica", "Arial", sans-serif},

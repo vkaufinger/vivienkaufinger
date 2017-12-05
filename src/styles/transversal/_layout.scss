@@ -1,0 +1,5 @@
+body {
+    @include mq($from: mobile, $until: tablet) {
+        color: red;
+    }
+}
