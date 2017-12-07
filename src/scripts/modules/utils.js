@@ -6,8 +6,12 @@
     */
     var myModule = function () {
         var FontFaceObserver = require('fontfaceobserver');
-        var preload = require('preload.js');
+        var preloader = require('preloader');
         var html = document.documentElement;
+        var loader = preloader({
+            xhrImages: true,
+            throttle: 1
+        });
 
 
         // Observe fonts loading before use it to don't block the rendering
@@ -20,21 +24,29 @@
 
 
         // Preload all images on window load
-        var imagesLoading = {
+        var imagesPreload = {
             srcSet: function () {
-               document.querySelectorAll('img[data-src]').forEach(function (image) {
-                    image.setAttribute('src', image.getAttribute('data-src'));
-                    image.removeAttribute('data-src');
+                loader.urls.forEach(function (url) {
+                    var img = document.querySelector('img[data-src="' + url + '"]');
+                    if (img) {
+                        img.setAttribute('src', loader.get(url).src);
+                        img.removeAttribute('data-src');
+                    }
                 });
             },
+            progress: function (progress) {
+                // console.log(progress)
+            },
             init: function () {
-                var that = this;
-                preload(imagesToLoad).progress(function (percent, image) {
-                    if (percent === 100) {
-                        that.srcSet();
-                    }
-                    console.log(percent, image);
+                imagesToLoad.forEach(function (url) {
+                    loader.addImage(url);
                 });
+
+                loader.on('progress', imagesPreload.progress);
+
+                loader.on('complete', imagesPreload.srcSet);
+
+                loader.load();
             }
         };
 
@@ -42,14 +54,12 @@
         function ready () {
             fontLoading();
 
-            window.addEventListener('load', function () {
-                imagesLoading.init();
-            });
+            imagesPreload.init();
         }
 
 
         function ajaxComplete () {
-            imagesLoading.srcSet();
+            imagesPreload.srcSet();
         }
 
         return {

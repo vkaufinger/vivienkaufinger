@@ -43,7 +43,7 @@
     "ismobilejs": "^0.4.1",
     "minireset.css": "0.0.3",
     "pjax": "^0.2.4",
-    "preload.js": "^1.0.0",
+    "preloader": "^4.0.2",
     "request-interval": "^2.0.0",
     "sass-mq": "^3.3.2",
     "throttle-debounce": "^1.0.1"
