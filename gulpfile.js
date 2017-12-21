@@ -97,7 +97,11 @@ gulp.task('jsModules', ['jsHint'], function () {
         .src('*.js', { cwd: paths.src + 'scripts/' })
         .pipe($.plumber(plumberErrorHandler))
         .pipe($.browserify2())
-        .pipe($.if(env !== 'dev', $.uglifyEs.default()))
+        .pipe($.if(env !== 'dev', $.uglifyEs.default({
+            mangle: {
+                reserved: ['Smooth']
+            }
+        })))
         .pipe($.rename('main.min.js'))
         .pipe(gulp.dest('scripts', { cwd: paths.dist }))
         .pipe($.livereload())
