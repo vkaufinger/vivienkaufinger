@@ -45,6 +45,7 @@
     "gsap": "^1.20.3",
     "ismobilejs": "^0.4.1",
     "minireset.css": "0.0.3",
+    "paper": "^0.11.5",
     "pjax": "^0.2.4",
     "preloader": "^4.0.2",
     "request-interval": "^2.0.0",

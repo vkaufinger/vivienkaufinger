@@ -18,10 +18,19 @@
 						</a>
 					</h3>
 				</header>
-				<img data-src="{{ data.imgPath }}/img1.jpeg" alt="">
-				<img data-src="{{ data.imgPath }}/img2.jpeg" alt="">
-				<img data-src="{{ data.imgPath }}/img3.jpeg" alt="">
-				<img data-src="{{ data.imgPath }}/img4.jpeg" alt="">
+				<canvas id="intro-canvas" class="intro__canvas" resize></canvas>
+				<div class="vs-div" data-speed="0">
+					<img data-src="{{ data.imgPath }}/img1.jpeg" alt="">
+				</div>
+				<div class="vs-div" data-speed="0">
+					<img data-src="{{ data.imgPath }}/img2.jpeg" alt="">
+				</div>
+				<div class="vs-div" data-speed="0">
+					<img data-src="{{ data.imgPath }}/img3.jpeg" alt="">
+				</div>
+				<div class="vs-div" data-speed="0">
+					<img data-src="{{ data.imgPath }}/img4.jpeg" alt="">
+				</div>
 			</article>
 		{% endfor %}
 	</section>
