@@ -7,11 +7,13 @@
     var myModule = function () {
         var FontFaceObserver = require('fontfaceobserver');
         var preloader = require('preloader');
+        var Parallax = require('./smooth-scroll').Parallax;
         var html = document.documentElement;
         var loader = preloader({
             xhrImages: true,
             throttle: 1
         });
+        var smooth;
 
 
         // Observe fonts loading before use it to don't block the rendering
@@ -31,6 +33,8 @@
                     if (img) {
                         img.setAttribute('src', loader.get(url).src);
                         img.removeAttribute('data-src');
+                        // Refresh scroll
+                        smooth.resize();
                     }
                 });
             },
@@ -51,21 +55,36 @@
         };
 
 
+        // Smooth scroll with parallaxed elements
+        function parallaxInit () {
+            smooth = new Parallax({
+                extends: true,
+                native: false,
+                section: document.getElementById('#ajax-wrapper'),
+                divs: document.querySelectorAll('.vs-div'),
+                vs: {
+                    mouseMultiplier: 0.25
+                }
+            });
+            smooth.init();
+
+            // Expose smooth instance for blob module
+            myModule.smooth = smooth;
+        }
+
+
         function ready () {
             fontLoading();
 
             imagesPreload.init();
+
+            parallaxInit();
         }
 
-
-        function ajaxComplete () {
-            imagesPreload.srcSet();
-        }
 
         return {
             name: globName,
             ready: ready,
-            ajaxComplete: ajaxComplete
         };
     }();
 
