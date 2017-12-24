@@ -1,0 +1,65 @@
+.header {
+    position: relative;
+    color: #fff;
+}
+
+.header__inner {
+    height: 150vh;
+}
+
+.header__content {
+    position: relative;
+    z-index: 1;
+    top: -25vh;
+    // padding-top: 25vh;
+    line-height: 1.25;
+}
+
+.header__title {
+    font-weight: 700;
+    @include mq($until: mobile) {
+        font-size: 2rem;
+    }
+    @include mq($from: mobile, $until: tablet) {
+        font-size: 3rem;
+    }
+    @include mq($from: tablet, $until: desktop) {
+        font-size: 4rem;
+    }
+    @include mq($from: desktop) {
+        font-size: 5rem;
+    }
+}
+
+.header__description {
+    margin-top: 20px;
+    @include mq($until: mobile) {
+        font-size: 1.8rem;
+    }
+    @include mq($from: mobile, $until: desktop) {
+        font-size: 2rem;
+    }
+    @include mq($from: desktop) {
+        font-size: 3rem;
+    }
+    p {
+        &:last-child {
+            margin-top: 20px;
+        }
+    }
+}
+
+.header__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    @include mq($until: tablet, $and: '(orientation: portrait)') {
+        height: 150vh;
+    }
+    @include mq($from: tablet, $until: wide, $and: '(orientation: portrait)') {
+        height: 150vh;
+    }
+}
+

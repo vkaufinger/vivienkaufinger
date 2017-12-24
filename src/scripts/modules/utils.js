@@ -5,24 +5,13 @@
     * Utilitaries
     */
     var myModule = function () {
-        var FontFaceObserver = require('fontfaceobserver');
         var preloader = require('preloader');
         var Parallax = require('./smooth-scroll').Parallax;
-        var html = document.documentElement;
         var loader = preloader({
             xhrImages: true,
             throttle: 1
         });
         var smooth;
-
-
-        // Observe fonts loading before use it to don't block the rendering
-        function fontLoading () {
-            var font = new FontFaceObserver('League Spartan');
-            font.load().then(function () {
-                html.classList.add('fonts-loaded');
-            });
-        }
 
 
         // Preload all images on window load
@@ -60,8 +49,8 @@
             smooth = new Parallax({
                 extends: true,
                 native: false,
-                section: document.getElementById('#ajax-wrapper'),
-                divs: document.querySelectorAll('.vs-div'),
+                section: document.getElementById('#main-wrapper'),
+                divs: document.querySelectorAll('[data-speed]'),
                 vs: {
                     mouseMultiplier: 0.25
                 }

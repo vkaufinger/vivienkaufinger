@@ -41,7 +41,7 @@
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "bubble-event": "^1.0.10",
-    "fontfaceobserver": "^2.0.13",
+    "flexboxgrid": "^6.3.1",
     "gsap": "^1.20.3",
     "ismobilejs": "^0.4.1",
     "minireset.css": "0.0.3",

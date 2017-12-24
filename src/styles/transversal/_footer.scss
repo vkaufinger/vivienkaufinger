@@ -1,0 +1,22 @@
+.footer__icons {
+    @include mq($from: tablet) {
+        position: fixed;
+        z-index: 1;
+        top: 75px;
+        right: 30px;
+        .icon {
+            display: block;
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+    }
+}
+
+.footer__icons-item {
+    &:not(:first-child){
+        @include mq($from: tablet) {
+            margin-top: 20px;
+        }
+    }
+}

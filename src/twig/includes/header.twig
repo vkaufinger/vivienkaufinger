@@ -1,15 +1,22 @@
 <header class="header">
-    {%- if page.name == 'home' -%}
-        <h1>
-    {%- endif -%}
-    <a class="js-ajax-link  js-nav-link{% if page.name == 'home' %}  is-active{% endif %}" href="{{ data.siteRoot }}">
-            {{- 'Vivien&nbsp;Kaufinger' -}}
-        </a>
-    {%- if page.name == 'home' -%}
-        </h1>
-    {%- endif -%}
-    <a class="js-ajax-link  js-nav-link{% if page.name == 'about' %}  is-active{% endif %}" href="{{ data.siteRoot }}about">
-        {{- 'About' -}}
-    </a>
-
-</header>
+    <div class="container-fluid">
+        <div class="header__inner  row  middle-xs">
+            <div class="col-sm-offset-1  col-sm-10  col-md-10  col-lg-offset-2  col-lg-8">
+                <div class="header__content" data-speed="-0">
+                    <h1 class="header__title">
+                        Hello I'm Vivien,<br>freelance front-end developer<br>based in Paris.
+                    </h1>
+                    <div class="header__description">
+                        <p>
+                            Specialised in creating interactive experiences and user-friendly interfaces whilst maintaining semantic, clean markup and SEO friendly code.
+                        </p>
+                        <p>
+                            Oh, and I ❤️ lava lamp & canvas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="intro-canvas" class="header__canvas" resize></canvas>
+</header>︎

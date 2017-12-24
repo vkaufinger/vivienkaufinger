@@ -24,7 +24,7 @@
                 this.scrollSpeed = el.scrollSpeed;
                 this.threshold = Math.min(this.size[0], this.size[1]) * 0.3;
 
-                // Create a fit rect to defin shape position
+                // Create a fit rect to define shape position
                 this.fitRect = new this.Path.Rectangle(this.position, this.size);
 
                 // Create the shape
@@ -49,7 +49,7 @@
                     this.circlePath.scale([1.05, 1]);
                     this.circlePath.skew([-20, 0]);
                 } else {
-                    this.circlePath.scale([1.7, this.mirror ? -1 : 1]);
+                    this.circlePath.scale([1.7, -1]);
                     this.circlePath.skew([15, 0]);
                 }
                 this.circlePath.rotate(this.rotation);
@@ -58,7 +58,7 @@
                 this.circlePath.smooth();
 
                 // Fit circle with rectangle
-                this.circlePath.fitBounds(this.fitRect.bounds);
+                this.circlePath.fitBounds(this.fitRect.bounds, true);
 
                 this.group = new this.Group([this.circlePath]);
                 this.scrollY = this.group.position.y;
@@ -99,7 +99,6 @@
                     var mouseOffset = scene.mousePoint.subtract(controlPoint);
                     var mouseDistance = scene.mousePoint.getDistance( controlPoint );
                     var newDistance = 0;
-                    // console.log(this.mousePoint)
 
                     if (mouseDistance < this.threshold) {
                         newDistance = (mouseDistance - this.threshold) * scene.mouseForce;

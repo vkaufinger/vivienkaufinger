@@ -1,7 +1,6 @@
 $colors: (
-    // background: #0B3151,
-    // highlight:  #FFF372,
-    // text:       #FFF,
+    title: #1e1634,
+    text: #3f555e,
 );
 
 @function colors($name) {
@@ -10,11 +9,12 @@ $colors: (
 
 // Responsive settings -> https://github.com/sass-mq/sass-mq
 $mq-breakpoints: (
-    mobile:  320px,
+    mobile:  500px,
     tablet:  768px,
-    desktop: 1024px,
+    desktop: 992px,
     wide:    1200px,
 );
+
 $mq-show-breakpoints: (mobile, tablet, desktop, wide);
 
 $fonts: (

@@ -8,11 +8,11 @@
         var paper = require('paper');
         var debounce = require('throttle-debounce/debounce');
         var shapes = [
-            { type: 'ellipse',  color: '#fc6964', rotation: 0,    mirror: true,  scrollSpeed: 0 },
-            { type: 'ellipse',  color: '#fc6964', rotation: 0,    mirror: false, scrollSpeed: 0.5 },
-            { type: 'triangle', color: '#3f555e', rotation: 10,   mirror: false, scrollSpeed: -1 },
-            { type: 'ellipse',  color: '#a172f3', rotation: -0,    mirror: false, scrollSpeed: -0.5 },
-            { type: 'triangle', color: '#a172f3', rotation: -130, mirror: false, scrollSpeed: -2  }
+            { type: 'ellipse',  color: '#fc6964', rotation: 0,    scrollSpeed: 0.3 },
+            { type: 'ellipse',  color: '#fc6964', rotation: 0,    scrollSpeed: 0.15 },
+            { type: 'triangle', color: '#3f555e', rotation: 10,   scrollSpeed: -0.5 },
+            { type: 'ellipse',  color: '#a172f3', rotation: -0,   scrollSpeed: -0.15 },
+            { type: 'triangle', color: '#a172f3', rotation: -130, scrollSpeed: -0.75 }
         ];
         var Blob;
 
@@ -24,17 +24,17 @@
             shapes[0].size     = [viewWidth * 0.9,  viewHeight * 0.5];
             shapes[0].position = [viewWidth * -0.1, viewHeight * 0.05];
 
-            shapes[1].size     = [viewWidth * 1,    viewHeight * 0.5];
-            shapes[1].position = [viewWidth * 0.2,  viewHeight * -0.1];
+            shapes[1].size     = [viewWidth * 1,    viewHeight * 0.6];
+            shapes[1].position = [viewWidth * 0.2,  viewHeight * -0.2];
 
-            shapes[2].size     = [viewWidth * 0.6,  viewHeight * 0.65];
-            shapes[2].position = [viewWidth * 0.1,  viewHeight * -0.2];
+            shapes[2].size     = [viewWidth * 0.5,  viewHeight * 0.55];
+            shapes[2].position = [viewWidth * 0.15,  viewHeight * -0.2];
 
             shapes[3].size     = [viewWidth * 0.7,  viewHeight * 0.4];
             shapes[3].position = [viewWidth * 0.4,  viewHeight * 0.1];
 
             shapes[4].size     = [viewWidth * 0.4,  viewHeight * 0.3];
-            shapes[4].position = [viewWidth * 0.1,  viewHeight * 0.5];
+            shapes[4].position = [viewWidth * 0.05,  viewHeight * 0.5];
         }
 
 
