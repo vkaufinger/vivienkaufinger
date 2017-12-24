@@ -1,13 +1,11 @@
 html {
-    font-size: 62.5%; // Equivalent 1em = 10px
+    font: 400 62.5%/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,Arial,sans-serif;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
     color: colors(text);
-    &.fonts-loaded {
-        font-family: fonts(league);
-    }
 }
+
 
 ul,
 ol {

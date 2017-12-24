@@ -74,8 +74,6 @@
 
 
         function ready () {
-            fontLoading();
-
             imagesPreload.init();
 
             parallaxInit();
