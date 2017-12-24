@@ -8,9 +8,9 @@
         var paper = require('paper');
         var debounce = require('throttle-debounce/debounce');
         var shapes = [
-            { type: 'ellipse',  color: '#fc6964', rotation: 0,    scrollSpeed: 0.3 },
-            { type: 'ellipse',  color: '#fc6964', rotation: 0,    scrollSpeed: 0.15 },
-            { type: 'triangle', color: '#3f555e', rotation: 10,   scrollSpeed: -0.5 },
+            { type: 'ellipse',  color: '#fc6964', rotation: 0,    scrollSpeed: 0.2   },
+            { type: 'ellipse',  color: '#fc6964', rotation: 0,    scrollSpeed: 0.4   },
+            { type: 'triangle', color: '#3f555e', rotation: 10,   scrollSpeed: -0.5  },
             { type: 'ellipse',  color: '#a172f3', rotation: -0,   scrollSpeed: -0.15 },
             { type: 'triangle', color: '#a172f3', rotation: -130, scrollSpeed: -0.75 }
         ];

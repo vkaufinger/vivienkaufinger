@@ -5,14 +5,19 @@
 
 .header__inner {
     height: 150vh;
+    @include mq($until: tablet) {
+        height: 105vh;
+    }
 }
 
 .header__content {
     position: relative;
     z-index: 1;
     top: -25vh;
-    // padding-top: 25vh;
     line-height: 1.25;
+    @include mq($until: tablet) {
+        top: -5vh;
+    }
 }
 
 .header__title {
