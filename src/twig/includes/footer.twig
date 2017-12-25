@@ -1,27 +1,15 @@
-<footer class="footer  footer--{{ layout }}  {% if layout == 'desktop' %}js-footer{% endif %}">
+<footer class="footer  footer--{{ layout }}  {% if layout == 'desktop' %}js-footer{% endif -%}">
     <div class="container-fluid">
-        <ul class="footer__links">
-            <li class="footer__links-item">
-                <a class="footer__links-link" href="" target="_blank">
-                    <svg class="footer__links-icon" aria-hidden="true">
-                        <use xlink:href="#linkedin"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="footer__links-item">
-                <a class="footer__links-link" href="" target="_blank">
-                    <svg class="footer__links-icon" aria-hidden="true">
-                        <use xlink:href="#twitter"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="footer__links-item">
-                <a class="footer__links-link" href="" target="_blank">
-                    <svg class="footer__links-icon" aria-hidden="true">
-                        <use xlink:href="#github"></use>
-                    </svg>
-                </a>
-            </li>
+        <ul class="footer__links  row  center-xs">
+            {% for link in data.links|slice(1,3) %}
+                <li class="footer__links-item  col-sm-12">
+                    <a class="footer__links-link" href="{{ link.url }}" target="_blank">
+                        <svg class="footer__links-icon" aria-hidden="true">
+                            <use xlink:href="#{{ link.title }}"></use>
+                        </svg>
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 </footer>
