@@ -5,33 +5,5 @@
 {% extends 'includes/_base.twig' %}
 
 {% block content %}
-	<section>
-		<h2>
-			{{- 'Selected projects' -}}
-		</h2>
-		{% for project in data.projects %}
-			<article>
-				<header>
-					<h3>
-						<a class="js-ajax-link" href="{{ data.siteRoot }}projects/{{ project.title|lower|replace({ "&nbsp;" : "-", "'" : "-", "." : "-" }) }}">
-							{{- project.title -}}
-						</a>
-					</h3>
-				</header>
-
-				<div class="vs-div" data-speed="0">
-					<img data-src="{{ data.imgPath }}/img1.jpeg" alt="">
-				</div>
-				<div class="vs-div" data-speed="0">
-					<img data-src="{{ data.imgPath }}/img2.jpeg" alt="">
-				</div>
-				<div class="vs-div" data-speed="0">
-					<img data-src="{{ data.imgPath }}/img3.jpeg" alt="">
-				</div>
-				<div class="vs-div" data-speed="0">
-					<img data-src="{{ data.imgPath }}/img4.jpeg" alt="">
-				</div>
-			</article>
-		{% endfor %}
-	</section>
+	{% include 'sections/projects.twig' %}
 {% endblock content %}

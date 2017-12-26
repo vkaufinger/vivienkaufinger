@@ -9,20 +9,37 @@
         var modules = [
             require('./utils'),
             require('./intro'),
+            require('./projects'),
         ];
 
         /**
         * Modules "magic" methods bindings
         */
         function modMagic() {
-            // DOM ready
             document.addEventListener('DOMContentLoaded', function (e) {
+                // DOM ready
                 modules.forEach(function (module) {
                     if (typeof module.ready !== 'undefined') {
                         module.ready();
                     }
                 });
+
+                // Smooth scroll callback
+                var smooth = require('./utils.js').smooth;
+                var lastScroll = 0;
+
+                smooth.callback = function (scrollY) {
+                    var direction = lastScroll < scrollY ? 'down' : 'up';
+                    lastScroll = scrollY;
+
+                    modules.forEach(function (module) {
+                        if (typeof module.onScroll !== 'undefined') {
+                            module.onScroll(direction, scrollY);
+                        }
+                    });
+                }
             });
+
 
             // Ajax start
             document.addEventListener('pjax:complete', function (e) {
@@ -33,7 +50,8 @@
                 });
             });
 
-            // Ajax is ajax
+
+            // Ajax is complete
             document.addEventListener('ajaxComplete', function () {
                 window.ajaxUpdate = false;
                 modules.forEach(function (module) {
@@ -42,6 +60,7 @@
                     }
                 });
             });
+
 
             // Window resize
             window.addEventListener('resize', debounce(200, function (e) {

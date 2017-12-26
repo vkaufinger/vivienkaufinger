@@ -6,12 +6,23 @@
     "trackingID": "",
     "projects": [
         {
-            "title": "Example",
-            "poster": "",
-            "client": "",
-            "team": "",
-            "year": "",
-            "solution": "",
+            "title": "W2P digital",
+            "poster": "https://dummyimage.com/600x450/ccc/000",
+            "client": "W2P Digital",
+            "description": "Agency portfolio",
+            "year": "2017",
+            "team": "W2P",
+            "color": "#858bdb",
+            "url": ""
+        },
+        {
+            "title": "Klorane apaise",
+            "poster": "https://dummyimage.com/600x400/000/fff",
+            "client": "Pierre Fabre",
+            "description": "Website experience",
+            "year": "2017",
+            "team": "W2P",
+            "color": "#db8597",
             "url": ""
         }
     ],

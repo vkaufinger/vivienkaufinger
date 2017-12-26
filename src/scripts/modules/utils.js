@@ -7,8 +7,6 @@
     var myModule = function () {
         var preloader = require('preloader');
         var Parallax = require('./smooth-scroll').Parallax;
-        var vw = window.innerWidth;
-        var vh = window.innerHeight;
         var loader = preloader({
             xhrImages: true,
             throttle: 1
@@ -66,52 +64,15 @@
             myModule.smooth = smooth;
         }
 
-        function toggleFooterLinks () {
-            var footerLinks = document.querySelector('.js-footer');
-
-            console.log(footerLinks);
-            if (!footerLinks || vw < 768) {
-                return;
-            }
-
-            var linksHeight = footerLinks.getBoundingClientRect().height;
-            var lastScroll = 0;
-
-            smooth.callback = function (scrollY) {
-                var direction = lastScroll < scrollY ? 'down' : 'up';
-                lastScroll = scrollY;
-
-                if (direction === 'down') {
-                    if (scrollY > vh - linksHeight) {
-                        footerLinks.classList.add('is-dark');
-                    } else {
-                        footerLinks.classList.remove('is-dark');
-                    }
-                } else {
-                    if (scrollY > vh) {
-                        footerLinks.classList.add('is-dark');
-                    } else {
-                        footerLinks.classList.remove('is-dark');
-                    }
-                }
-            };
-        }
-
 
         function ready () {
-
             imagesPreload.init();
 
             parallaxInit();
-
-            toggleFooterLinks();
         }
 
 
         function resize () {
-            vw = window.innerWidth;
-            vh = window.innerHeight;
-
         }
 
 
