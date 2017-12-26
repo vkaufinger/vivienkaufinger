@@ -1,28 +1,16 @@
 .footer {
-    &--mobile {
-        @include mq($until: tablet) {
-        }
-        @include mq($from: tablet) {
-            display: none;
-        }
-    }
-    &--desktop {
-        @include mq($until: tablet) {
-            display: none;
-        }
-        @include mq($from: tablet) {
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            right: 0;
-            width: 80px;
-        }
+    @include mq($from: tablet) {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        width: 80px;
     }
 }
 
 .footer__links {
     @include mq($from: tablet) {
-        margin-top: 75px;
+        padding: 130px 0;
     }
 }
 
