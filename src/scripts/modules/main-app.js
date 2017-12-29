@@ -37,7 +37,7 @@
                             module.onScroll(direction, scrollY);
                         }
                     });
-                }
+                };
             });
 
 
