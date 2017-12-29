@@ -1,28 +1,38 @@
 {
-    "siteRoot": "http://localhost:8888/vivienkaufinger/",
+    "siteRoot": "http://192.168.1.80:8888/vivienkaufinger/",
     "siteTitle" : "Vivien Kaufinger - Creative developer",
     "siteDescription": "Vivien Kaufinger - Creative developer based in Paris. I create websites with creativity, perfs and accessibility.",
-    "imgPath": "http://localhost:8888/vivienkaufinger/dist/images",
+    "imgPath": "http://192.168.1.80:8888/vivienkaufinger/dist/images",
     "trackingID": "",
     "projects": [
         {
             "title": "W2P digital",
-            "poster": "https://dummyimage.com/600x450/ccc/000",
+            "poster": "https://images.unsplash.com/photo-1512914000558-f010bc392d50?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=1956fc3cf4e7c03504575ccdc9b60873",
             "client": "W2P Digital",
             "description": "Agency portfolio",
             "year": "2017",
             "team": "W2P",
             "color": "#858bdb",
-            "url": ""
+            "url": "https://www.w2p-digital.com"
         },
         {
             "title": "Klorane apaise",
-            "poster": "https://dummyimage.com/600x400/000/fff",
+            "poster": "https://images.unsplash.com/photo-1512085222764-7c0163f117c3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=fcefd4e0d38898d9b3a465243c5fd3ca",
             "client": "Pierre Fabre",
             "description": "Website experience",
             "year": "2017",
             "team": "W2P",
             "color": "#db8597",
+            "url": ""
+        },
+        {
+            "title": "Om.net",
+            "poster": "https://images.unsplash.com/photo-1513043069934-38cc6da2ea9f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=8153edd56070c3fa07620cb0a26600b3",
+            "client": "Olympique de Marseille",
+            "description": "Website portail",
+            "year": "2015",
+            "team": "X-Prime",
+            "color": "#31a8f0",
             "url": ""
         }
     ],
