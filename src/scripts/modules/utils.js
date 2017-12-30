@@ -61,10 +61,13 @@
                     touchMultiplier: 2.75
                 }
             });
-            smooth.init();
-
             // Expose smooth instance for blob module
             myModule.smooth = smooth;
+
+            // Init smooth on window load to fix bug calculation
+            window.onload = function () {
+                smooth.init();
+            };
         }
 
 
