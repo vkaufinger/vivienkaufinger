@@ -1,3 +1,11 @@
+html,
+body {
+    // Fix viewport height on ios : remove tabs bar on landscape
+    @include mq($from: xs, $until: sm, $and: '(orientation: landscape)') {
+        height: calc(100% + 1em);
+    }
+}
+
 .vs-section {
     text-align: left;
 }
