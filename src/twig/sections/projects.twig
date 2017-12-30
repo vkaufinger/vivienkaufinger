@@ -5,40 +5,34 @@
         </h2>
         <div class="projects__list">
             {% for project in data.projects %}
-                <article class="project  row  center-xs  middle-xs">
-                    <div class="project__inner  col-xs-12">
-                        <header class="project__header" data-speed="-0.25">
-                            <h3 class="project__title">
-                                <a href="{{ project.url }}" target="_blank">
-                                    {{- project.title -}}
-                                </a>
-                            </h3>
-                            <div class="project__cta">
-                                <a class="project__cta-link" href="{{ project.url }}" target="_blank">
-                                    {{- 'Visit the website' -}}
-                                </a>
-                            </div>
-                        </header>
-                        <div class="project__poster">
-                            <div class="project__poster-wrapper">
-                                <div class="project__poster-inner">
-                                    <img class="project__poster-img" src="{{ project.poster }}" alt="{{- project.title -}}">
-                                    <div class="project__poster-shadow" style="box-shadow: 0 0 100px 70px {{ project.color }};"></div>
-                                </div>
-                            </div>
+                <article class="project  row  center-xs  middle-lg">
+                    <header class="project__header  col-xs-12" data-speed="-0.25">
+                        <h3 class="project__title">
+                            {{- project.title -}}
+                        </h3>
+                        <div class="project__cta">
+                            <a class="project__cta-link" href="{{ project.url }}" target="_blank">
+                                {{- 'Visit the website' -}}
+                            </a>
                         </div>
-                        <ul class="project__infos  row  end-xs">
-                            <li class="project__infos-item  col-xs-12">
-                                {{- project.client -}}
-                            </li>
-                            <li class="project__infos-item  col-xs-12">
-                                {{- project.description -}}
-                            </li>
-                            <li class="project__infos-item  col-xs-12">
-                                {{- '@' ~ project.team ~ ' - ' ~ project.year -}}
-                            </li>
-                        </ul>
+                    </header>
+                    <div class="project__poster  col-xs  first-xs" data-speed="0">
+                        <div class="project__poster-inner">
+                            <img class="project__poster-img" src="{{ project.poster }}" alt="{{- project.title -}}">
+                            <div class="project__poster-shadow" style="box-shadow: 0 0 100px 70px {{ project.color }};"></div>
+                        </div>
                     </div>
+                    <ul class="project__infos  col-xs-12  col-md  end-md">
+                        <li class="project__infos-item">
+                            {{- project.client -}}
+                        </li>
+                        <li class="project__infos-item">
+                            {{- project.description -}}
+                        </li>
+                        <li class="project__infos-item">
+                            {{- '@' ~ project.team ~ ' - ' ~ project.year -}}
+                        </li>
+                    </ul>
                 </article>
             {% endfor %}
         </div>

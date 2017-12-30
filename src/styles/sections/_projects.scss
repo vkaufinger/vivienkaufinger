@@ -1,38 +1,51 @@
 .projects {
-    // margin-top: -10vh;
+    @include mq($until: sm) {
+        margin-top: 25vh;
+    }
 }
 
 .project {
-    height: 120vh;
-    margin-top: 10vh;
-    padding-top: 20vh;
-}
-
-.project__inner {
     position: relative;
+    @include mq($until: lg) {
+        margin-top: 20vh;
+    }
+    @include mq($from: lg) {
+        align-content: center; // This property saves my life !!!! Defines vertical spacing between children
+        height: 100vh;
+        margin-top: 25vh;
+    }
 }
 
 .project__header {
-    padding-top: 25vh;
-    padding-bottom: 65px * 2;
+    @include mq($from: lg) {
+        margin-bottom: -65px; // Cta height
+        padding-bottom: 65px; // Cta height
+    }
 }
 
 .project__title {
-    font-size: 15.5rem;
+    $min_width: 320px;
+    $max_width: mq-get-breakpoint-width(lg);
+    $min_font: 40px;
+    $max_font: 155px;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
     font-weight: 700;
     color: colors(title);
 }
 
 .project__poster {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.project__poster-wrapper {
-   max-width: 450px;
+    @include mq($until: sm) {
+        max-width: 250px;
+    }
+    @include mq($from: sm, $until: md) {
+        max-width: 400px;
+    }
+    @include mq($from: md) {
+        max-width: 450px;
+    }
+    @include mq($until: lg) {
+        transform: rotateX(-55deg) rotateZ(45deg);
+    }
 }
 
 .project__poster-inner {
@@ -47,10 +60,6 @@
         box-shadow: 3px 3px 0 0px #aaa5bd;
         content: "";
     }
-}
-
-.project__poster-inner {
-    transform: rotateX(-55deg) rotateZ(45deg);
 }
 
 .project__poster-img {
@@ -70,27 +79,51 @@
 }
 
 .project__cta {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translateY(-100%);
-    left: 0;
+    @include mq($until: md) {
+        margin-top: 10px;
+    }
+    @include mq($from: lg) {
+        margin-bottom: -65px;
+    }
 }
+
 .project__cta-link {
     display: inline-block;
     vertical-align: top;
-    padding: 17px 50px;
     background-color: colors(title);
     border-radius: 5px;
-    font-size: 2rem;
     font-weight: 700;
     color: #fff;
+    transition: background-color 500ms cubic-bezier(0.3, 0.1, 0.05, 1);
+    @include mq($until: sm) {
+        padding: 12px 25px;
+        font-size: 1.6rem;
+    }
+    @include mq($from: sm) {
+        padding: 17px 50px;
+        font-size: 2rem;
+    }
+    @include mq($from: md) {
+        &:hover {
+            background-color: #fc6964;
+        }
+    }
 }
 
 .project__infos {
-    margin-top: -10vh;
     margin-right: 10px;
-    font-size: 1.6rem;
     color: #ababab;
-    line-height: 1.4;
+    @include mq($until: sm) {
+        font-size: 1.4rem;
+    }
+    @include mq($from: sm) {
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+    @include mq($until: lg) {
+        margin-top: 20px;
+    }
+    @include mq($from: lg) {
+        margin-top: -15vh;
+    }
 }

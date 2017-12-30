@@ -5,31 +5,32 @@
     * Projects
     */
     var myModule = function () {
+        var smooth;
         var vw = window.innerWidth;
         var vh = window.innerHeight;
-        var offset = vh * 0;
-        var projects;
+        var offset = vh * 0.35;
 
 
         function ready () {
-            projects = document.querySelectorAll('.project');
+            smooth = require('./utils.js').smooth;
         }
 
 
         function onScroll (direction, scrollY) {
-            projects.forEach(function (el) {
-                var poster = el.querySelector('.project__poster-inner');
-                if (!poster) {
+            if (!smooth.options.divs) {
+                return;
+            }
+            smooth.options.divs.forEach(function (el) {
+                if (!el.matches('.project__poster')) {
                     return;
                 }
-                var top = el.getBoundingClientRect().top - offset;
-                var inView = top <= vh;
-                if (inView) {
-                    var transform = top / vh;
-                    transform = Math.max(transform, 0);
-                    transform = 1 - transform;
 
-                    poster.style.transform = 'rotateX(' + -55 * transform + 'deg) rotateZ(' + 45 * transform + 'deg)';
+                var top = el.getBoundingClientRect().top;
+                var transform = (top - offset) / (vh - offset);
+                transform = 1 - Math.max(transform, 0);
+
+                if (el.classList.contains('in-view')) {
+                    el.style.transform = 'rotateX(' + -55 * transform + 'deg) rotateZ(' + 45 * transform + 'deg)';
                 }
             });
         }
