@@ -1,25 +1,24 @@
 .footer {
-    @include mq($from: tablet) {
+    @include mq($from: md) {
         position: absolute;
         z-index: 1;
-        top: 0;
         right: 0;
         width: 80px;
     }
-}
-
-.footer__links {
-    @include mq($from: tablet) {
-        padding: 130px 0;
+    @include mq($from: md, $until: lg) {
+        top: 70px;
+    }
+    @include mq($from: lg) {
+        top: 195px;
     }
 }
 
 .footer__links-item {
     &:not(:first-child) {
-        @include mq($until: tablet) {
+        @include mq($until: md) {
             margin-left: 10px;
         }
-        @include mq($from: tablet) {
+        @include mq($from: md) {
             margin-top: 10px;
         }
     }
@@ -31,12 +30,12 @@
 
 .footer__links-icon {
     display: block;
-    @include mq($until: tablet) {
+    @include mq($until: md) {
         width: 30px;
         height: 30px;
         fill: colors(text);
     }
-    @include mq($from: tablet) {
+    @include mq($from: md) {
         width: 20px;
         height: 20px;
         fill: #fff;
