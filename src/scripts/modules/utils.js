@@ -72,7 +72,9 @@
 
 
         function ready () {
-            imagesPreload.init();
+            if (window.imagesToLoad) {
+                imagesPreload.init();
+            }
 
             parallaxInit();
         }
