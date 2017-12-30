@@ -83,12 +83,8 @@
         }
 
 
-        function ready () {
-        }
-
         return {
             name: globName,
-            ready: ready,
             Parallax: Parallax
         };
     }();
