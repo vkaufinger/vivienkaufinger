@@ -1,51 +1,49 @@
 .header {
     position: relative;
+    z-index: 1;
     color: #fff;
+    line-height: 1.25;
 }
 
 .header__inner {
-    @include mq($from: tablet) {
-        height: 150vh;
+    @include mq($from: xs, $and: '(orientation: portrait)') {
+        height: 75vh;
+    }
+    @include mq($from: xs, $and: '(orientation: landscape)') {
+        height: 100vh;
     }
 }
 
 .header__content {
     position: relative;
     z-index: 1;
-    line-height: 1.25;
-    @include mq($until: tablet) {
-        padding: 10vh 0;
-    }
-    @include mq($from: tablet) {
-        top: -25vh;
-    }
 }
 
 .header__title {
     font-weight: 700;
-    @include mq($until: mobile) {
+    @include mq($until: sm) {
         font-size: 2.5rem;
     }
-    @include mq($from: mobile, $until: tablet) {
+    @include mq($from: sm, $until: md) {
         font-size: 3rem;
     }
-    @include mq($from: tablet, $until: desktop) {
+    @include mq($from: md, $until: lg) {
         font-size: 4rem;
     }
-    @include mq($from: desktop) {
+    @include mq($from: lg) {
         font-size: 5rem;
     }
 }
 
 .header__description {
     margin-top: 20px;
-    @include mq($until: mobile) {
-        font-size: 1.8rem;
+    @include mq($until: sm) {
+        font-size: 1.7rem;
     }
-    @include mq($from: mobile, $until: desktop) {
+    @include mq($from: sm, $until: lg) {
         font-size: 2rem;
     }
-    @include mq($from: desktop) {
+    @include mq($from: lg) {
         font-size: 3rem;
     }
     p {
@@ -57,17 +55,24 @@
 
 .header__canvas {
     position: absolute;
+    pointer-events: none;
     top: 0;
     left: 0;
     width: 100%;
-    @include mq($until: tablet) {
-        height: 180%;
+    transform: translateZ(0);
+    @include mq($from: xs, $until: sm, $and: '(orientation: portrait)') {
+        height: 135vh;
     }
-    @include mq($from: tablet) {
+    @include mq($from: xs, $until: sm, $and: '(orientation: landscape)') {
+        height: 210vh;
+    }
+    @include mq($from: sm, $until: lg, $and: '(orientation: portrait)') {
+        height: 110vh;
+    }
+    @include mq($from: sm, $until: lg, $and: '(orientation: landscape)') {
+        height: 155vh;
+    }
+    @include mq($from: lg, $and: '(orientation: landscape)') {
         height: 200vh;
     }
-    @include mq($from: tablet, $until: wide, $and: '(orientation: portrait)') {
-        height: 150vh;
-    }
 }
-
