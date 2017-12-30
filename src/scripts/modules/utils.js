@@ -5,6 +5,7 @@
     * Utilitaries
     */
     var myModule = function () {
+        var isMobile = require('ismobilejs');
         var preloader = require('preloader');
         var Parallax = require('./smooth-scroll').Parallax;
         var loader = preloader({
@@ -53,9 +54,11 @@
                 extends: true,
                 native: false,
                 section: wrapper,
-                divs: parallaxEls,
+                divs: isMobile.any ? false : parallaxEls, // Enable parallax only from tablet
+                ease: isMobile.any ? 0.1 : 0.075,
                 vs: {
-                    mouseMultiplier: 0.25
+                    mouseMultiplier: 0.25,
+                    touchMultiplier: 2.75
                 }
             });
             smooth.init();
