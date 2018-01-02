@@ -75,7 +75,9 @@
 
                 if (inview) {
                     el.classList.add('in-view');
-                    el.style[this.prefix] = this.getTransform(transform);
+                    if (cache.speed !== '0') {
+                        el.style[this.prefix] = this.getTransform(transform);
+                    }
                 } else {
                     el.classList.remove('in-view');
                 }

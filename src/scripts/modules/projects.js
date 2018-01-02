@@ -5,10 +5,10 @@
     * Projects
     */
     var myModule = function () {
-        var smooth;
         var vw = window.innerWidth;
         var vh = window.innerHeight;
         var offset = vh * 0.35;
+        var smooth;
 
 
         function ready () {
@@ -25,11 +25,11 @@
                     return;
                 }
 
-                var top = el.getBoundingClientRect().top;
-                var transform = (top - offset) / (vh - offset);
-                transform = 1 - Math.max(transform, 0);
-
                 if (el.classList.contains('in-view')) {
+                    var top = el.getBoundingClientRect().top;
+                    var transform = (top - offset) / (vh - offset);
+                    transform = 1 - Math.max(0, transform);
+
                     el.style.transform = 'rotateX(' + -55 * transform + 'deg) rotateZ(' + 45 * transform + 'deg)';
                 }
             });

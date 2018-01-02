@@ -34,6 +34,8 @@
 }
 
 .project__poster {
+    position: relative;
+    z-index: 1;
     @include mq($until: sm) {
         max-width: 250px;
     }
