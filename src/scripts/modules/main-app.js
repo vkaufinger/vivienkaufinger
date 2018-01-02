@@ -8,7 +8,7 @@
         var debounce = require('throttle-debounce/debounce');
         var modules = [
             require('./utils'),
-            require('./intro'),
+            require('./blobs'),
             require('./projects'),
         ];
 

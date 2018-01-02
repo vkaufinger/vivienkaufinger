@@ -52,27 +52,3 @@
         }
     }
 }
-
-.header__canvas {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: translateZ(0);
-    @include mq($from: xs, $until: sm, $and: '(orientation: portrait)') {
-        height: 135vh;
-    }
-    @include mq($from: xs, $until: sm, $and: '(orientation: landscape)') {
-        height: 210vh;
-    }
-    @include mq($from: sm, $until: lg, $and: '(orientation: portrait)') {
-        height: 110vh;
-    }
-    @include mq($from: sm, $until: lg, $and: '(orientation: landscape)') {
-        height: 155vh;
-    }
-    @include mq($from: lg, $and: '(orientation: landscape)') {
-        height: 200vh;
-    }
-}
