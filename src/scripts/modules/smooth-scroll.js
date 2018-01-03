@@ -58,7 +58,7 @@
             run () {
                 this.dom.divs.forEach(this.inViewport);
 
-                this.dom.section.style[this.prefix] = this.getTransform(this.vars.current * -1);
+                this.dom.section.style[this.prefix] = this.getTransform(-this.vars.current.toFixed(2));
 
                 super.run();
             }
@@ -76,7 +76,7 @@
                 if (inview) {
                     el.classList.add('in-view');
                     if (cache.speed !== '0') {
-                        el.style[this.prefix] = this.getTransform(transform);
+                        el.style[this.prefix] = this.getTransform(transform.toFixed(2));
                     }
                 } else {
                     el.classList.remove('in-view');

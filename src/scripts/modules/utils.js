@@ -54,7 +54,7 @@
                 extends: true,
                 native: false,
                 section: wrapper,
-                divs: isMobile.any ? false : parallaxEls, // Enable parallax only from tablet
+                divs: window.innerWidth < 1200 ? false : parallaxEls, // Enable parallax only from tablet
                 ease: isMobile.any ? 0.1 : 0.075,
                 vs: {
                     mouseMultiplier: 0.25,
@@ -81,6 +81,7 @@
 
 
         function resize () {
+            smooth.resize();
         }
 
 

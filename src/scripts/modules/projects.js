@@ -28,7 +28,7 @@
                 if (el.classList.contains('in-view')) {
                     var top = el.getBoundingClientRect().top;
                     var transform = (top - offset) / (vh - offset);
-                    transform = 1 - Math.max(0, transform);
+                    transform = Math.max(0, Math.min(1 - transform, 1));
 
                     el.style.transform = 'rotateX(' + -55 * transform + 'deg) rotateZ(' + 45 * transform + 'deg)';
                 }
