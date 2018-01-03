@@ -2,15 +2,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12  col-sm-offset-1  col-sm-10  col-md-10  col-lg-offset-2  col-lg-8">
-                <h2 class="title">
+                <h2 class="title  js-list-element">
                     {{- 'Experiences' -}}
                 </h2>
                 <ul class="list  row">
                     {% for experience in data.experiences %}
-                        <li class="col-xs-12  col-sm-3  list__item  list__item--{{ loop.index }}">
-                            <a href="{{ experience.url }}" target="_blank">
-                                <span class="js-list-item">{{ experience.name }}</span>
-                            </a>
+                        <li class="col-xs-12  col-sm-3  list__item">
+                            <span class="js-list-element">
+                                <a href="{{- experience.url -}}" target="_blank">
+                                    {{- experience.name -}}<sup>({{- experience.year -}})</sup>
+                                </a>
+                            </span>
                         </li>
                     {% endfor %}
                 </ul>

@@ -53,15 +53,18 @@
     "experiences": [
         {
             "name": "W2P",
-            "url": "https://www.w2p-digital.com"
+            "url": "https://www.w2p-digital.com",
+            "year": "2016"
         },
         {
             "name": "X-Prime",
-            "url": "https://www.xprimegroupe.com/"
+            "url": "https://www.xprimegroupe.com/",
+            "year": "2013"
         },
         {
             "name": "Overblog",
-            "url": "https://www.over-blog.com/"
+            "url": "https://www.over-blog.com/",
+            "year": "2012"
         }
     ],
     "skills": [

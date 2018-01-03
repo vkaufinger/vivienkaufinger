@@ -25,7 +25,7 @@
                     return;
                 }
 
-                var links = el.querySelectorAll('.js-list-item');
+                var links = el.querySelectorAll('.js-list-element');
 
                 if (el.classList.contains('in-view')) {
                     var top = el.getBoundingClientRect().top;
