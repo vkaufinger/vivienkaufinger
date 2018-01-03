@@ -1,0 +1,107 @@
+.contact {
+    @include mq($until: sm) {
+        margin: 15vh 0 10vh;
+    }
+    @include mq($from: sm, $until: lg) {
+        margin: 20vh 0 30vh;
+    }
+    @include mq($from: lg) {
+        margin: 25vh 0 40vh;
+    }
+}
+
+.contact__content {
+    @include mq($until: sm) {
+        margin-top: 5px;
+    }
+    @include mq($from: sm) {
+        margin-top: 10px;
+    }
+    p {
+        @include mq($until: sm) {
+            font-size: 1.6rem;
+        }
+        @include mq($from: sm, $until: md) {
+            font-size: 2.5rem;
+        }
+        @include mq($from: md) {
+            font-size: 3rem;
+        }
+        & + p {
+            @include mq($until: md) {
+                margin-top: 15px;
+            }
+            @include mq($from: md) {
+               margin-top: 30px;
+            }
+        }
+    }
+}
+
+.contact__link {
+    display: inline-flex;
+    @include mq($from: sm) {
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            margin-top: -1px;
+            background-color: colors(grape);
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 600ms cubic-bezier(0.07, 0.51, 0.12, 1);
+            transition-property: background-color, opacity, transform;
+            content: "";
+        }
+        &:hover::before {
+            background-color: colors(tomato);
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+}
+
+.contact__link-icon {
+    position: relative;
+    fill: colors(grape);
+    transition: 600ms cubic-bezier(0.07, 0.51, 0.12, 1);
+    @include mq($until: sm) {
+        width: 5px;
+        height: 10px;
+        transition-property: fill;
+    }
+    @include mq($from: sm) {
+        width: 10px;
+        height: 15px;
+        transition-property: fill, transform;
+    }
+    :hover > & {
+        fill: colors(tomato);
+        @include mq($from: sm) {
+            transform: translateX(22px);
+        }
+    }
+}
+
+.contact__wording {
+    color: colors(grape);
+    transition: 600ms cubic-bezier(0.07, 0.51, 0.12, 1);
+    @include mq($until: sm) {
+        margin-left: 10px;
+        transition-property: transform;
+    }
+    @include mq($from: sm) {
+        margin-left: 15px;
+        transition-property: color, transform;
+    }
+    :hover > & {
+        color: colors(tomato);
+        @include mq($from: sm) {
+            transform: translateX(22px);
+        }
+    }
+}

@@ -1,6 +1,8 @@
 $colors: (
-    title: #1e1634,
-    text: #3f555e,
+    title:  #1e1634,
+    text:   #3f555e,
+    tomato: #fc6964,
+    grape:  #a172f3
 );
 
 @function colors($name) {

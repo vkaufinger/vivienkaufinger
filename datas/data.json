@@ -36,22 +36,29 @@
             "url": ""
         }
     ],
-    "links": [
+    "experiences": [
         {
-            "title": "mail",
-            "url" : "contact@vivienkaufinger.com"
+            "name": "W2P",
+            "url": "https://www.w2p-digital.com"
         },
         {
-            "title": "twitter",
-            "url" : "https://twitter.com/vivienkaufinger"
+            "name": "X-Prime",
+            "url": "https://www.xprimegroupe.com/"
         },
         {
-            "title": "linkedin",
-            "url" : "https://www.linkedin.com/in/vivien-kaufinger-b37b8561"
-        },
-        {
-            "title": "github",
-            "url" : "https://github.com/vkaufinger"
+            "name": "Overblog",
+            "url": "https://www.over-blog.com/"
         }
-    ]
+    ],
+    "skills": [
+        "BEM",
+        "Canvas",
+        "Git",
+        "ES5/ES6",
+        "GSAP",
+        "Gulp",
+        "SCSS",
+        "SVG"
+    ],
+    "contactLink": "mailto:kaufinger.vivien@gmail.com?subject=Contact for freelance"
 }
