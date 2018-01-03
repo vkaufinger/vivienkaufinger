@@ -1,8 +1,8 @@
 <footer class="footer" data-speed="-0.5">
     <div class="container-fluid">
         <ul class="footer__links  row  center-xs">
-            {% for link in data.links|slice(1,3) %}
-                <li class="footer__links-item  col-lg">
+            {% for link in data.iconLinks %}
+                <li class="footer__links-item  col-xs  col-lg">
                     <a class="footer__links-link" href="{{ link.url }}" target="_blank">
                         <svg class="footer__links-icon" aria-hidden="true">
                             <use xlink:href="#{{ link.title }}"></use>

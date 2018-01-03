@@ -15,7 +15,7 @@
 
 .footer__links-item {
     &:not(:first-child) {
-        @include mq($until: md) {
+        @include mq($from: sm, $until: md) {
             margin-left: 10px;
         }
         @include mq($from: md) {
@@ -24,15 +24,27 @@
     }
 }
 .footer__links-link {
-    display: block;
-    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    @include mq($until: sm) {
+        padding: 10px 10px 20px;
+    }
+    @include mq($from: sm) {
+        padding: 10px;
+    }
 }
 
 .footer__links-icon {
     display: block;
-    @include mq($until: md) {
+    @include mq($until: sm) {
+        width: 25px;
+        height: 25px;
+    }
+    @include mq($from: sm, $until: md) {
         width: 30px;
         height: 30px;
+    }
+    @include mq($until: md) {
         fill: colors(text);
     }
     @include mq($from: md) {

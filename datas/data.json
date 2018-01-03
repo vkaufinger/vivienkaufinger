@@ -4,6 +4,20 @@
     "siteDescription": "Vivien Kaufinger - Creative developer based in Paris. I create websites with creativity, perfs and accessibility.",
     "imgPath": "http://192.168.1.80:8888/vivienkaufinger/dist/images",
     "trackingID": "",
+    "iconLinks": [
+        {
+            "title": "twitter",
+            "url" : "https://twitter.com/vivienkaufinger"
+        },
+        {
+            "title": "linkedin",
+            "url" : "https://www.linkedin.com/in/vivien-kaufinger-b37b8561"
+        },
+        {
+            "title": "github",
+            "url" : "https://github.com/vkaufinger"
+        }
+    ],
     "projects": [
         {
             "title": "W2P digital",
