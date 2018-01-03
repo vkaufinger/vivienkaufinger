@@ -25,14 +25,14 @@
                     return;
                 }
 
-                var text = el.querySelectorAll('p');
+                var items = el.querySelectorAll('.title, .contact__content p');
 
                 if (el.classList.contains('in-view')) {
                     var top = el.getBoundingClientRect().top;
                     var transform = (top - offset) / (vh - offset);
                     transform = Math.max(0, Math.min(transform, 1));
 
-                    text.forEach((el) => {
+                    items.forEach((el) => {
                         el.style.transform = 'skewX(' + -20 * transform + 'deg) rotate(' + -25 * transform + 'deg)';
                     });
                 }

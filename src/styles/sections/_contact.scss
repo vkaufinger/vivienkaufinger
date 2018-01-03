@@ -76,7 +76,7 @@
     }
     @include mq($from: sm) {
         width: 10px;
-        height: 15px;
+        height: 16px;
         transition-property: fill, transform;
     }
     :hover > & {
