@@ -1,25 +1,25 @@
-<section class="skills  list-section  js-list" data-speed="0">
+<section class="skills  list-section  js-section" data-speed="0">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12  col-sm-offset-1  col-sm-10  col-md-10  col-lg-offset-2  col-lg-8">
-                <h2 class="title  js-list-element">
+                <h2 class="title  js-item">
                     {{- 'Skills' -}}
                 </h2>
                 <ul class="list  row">
                     <li class="list__item  col-xs-6  col-sm-4">
                         {% for skill in data.skills|slice(0, 3) %}
-                            <span class="js-list-element">{{- skill -}}</span>
+                            <span class="js-item">{{- skill -}}</span>
                         {% endfor %}
                     </li>
                     <li class="list__item  col-xs-6  col-sm-4">
                         {% for skill in data.skills|slice(3, 3) %}
-                            <span class="js-list-element">{{- skill -}}</span>
+                            <span class="js-item">{{- skill -}}</span>
                         {% endfor %}
                     </li>
                     <li class="list__item  col-xs-12  col-sm-4">
                         <div class="row">
                             {% for skill in data.skills|slice(6, 3) %}
-                                <span class="col-xs  col-sm-12  js-list-element">{{- skill -}}</span>
+                                <span class="col-xs  col-sm-12  js-item">{{- skill -}}</span>
                             {% endfor %}
                         </div>
                     </li>

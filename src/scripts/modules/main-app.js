@@ -10,8 +10,6 @@
             require('./utils'),
             require('./blobs'),
             require('./projects'),
-            require('./list'),
-            require('./contact'),
         ];
 
         /**

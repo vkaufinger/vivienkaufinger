@@ -1,14 +1,14 @@
-<section class="experiences  list-section  js-list"  data-speed="0">
+<section class="experiences  list-section  js-section"  data-speed="0">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12  col-sm-offset-1  col-sm-10  col-md-10  col-lg-offset-2  col-lg-8">
-                <h2 class="title  js-list-element">
+                <h2 class="title  js-item">
                     {{- 'Experiences' -}}
                 </h2>
                 <ul class="list  row">
                     {% for experience in data.experiences %}
                         <li class="col-xs-12  col-sm-3  list__item">
-                            <span class="js-list-element">
+                            <span class="js-item">
                                 <a href="{{- experience.url -}}" target="_blank">
                                     {{- experience.name -}}<sup>({{- experience.year -}})</sup>
                                 </a>

@@ -12,6 +12,9 @@
             xhrImages: true,
             throttle: 1
         });
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+        var offset = vh * 0.5;
         var smooth;
 
 
@@ -85,10 +88,36 @@
         }
 
 
+        function onScroll (direction, scrollY) {
+            if (!smooth.options.divs) {
+                return;
+            }
+
+            smooth.options.divs.forEach((el) => {
+                if (!el.matches('.js-section')) {
+                    return;
+                }
+
+                var items = el.querySelectorAll('.js-item');
+
+                if (el.classList.contains('in-view')) {
+                    var top = el.getBoundingClientRect().top;
+                    var transform = (top - offset) / (vh - offset);
+                    transform = Math.max(0, Math.min(transform, 1));
+
+                    items.forEach((el) => {
+                        el.style.transform = 'skewX(' + -25 * transform + 'deg) rotate(' + -25 * transform + 'deg)';
+                    });
+                }
+            });
+        }
+
+
         return {
             name: globName,
             ready: ready,
-            resize: resize
+            resize: resize,
+            onScroll: onScroll
         };
     }();
 
