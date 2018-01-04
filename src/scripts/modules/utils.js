@@ -57,13 +57,15 @@
                 extends: true,
                 native: false,
                 section: wrapper,
-                divs: window.innerWidth < 1200 ? false : parallaxEls, // Enable parallax only from tablet
+                // Enable parallax only from desktop
+                divs: window.innerWidth < 1200 ? false : parallaxEls,
                 ease: isMobile.any ? 0.1 : 0.075,
                 vs: {
                     mouseMultiplier: 0.25,
                     touchMultiplier: 2.75
                 }
             });
+
             // Expose smooth instance for blob module
             myModule.smooth = smooth;
 
