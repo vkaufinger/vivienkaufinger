@@ -147,7 +147,7 @@ gulp.task('styles', ['fontCopy', 'css']);
 //TWIG
 gulp.task('twig', function () {
     return gulp
-		.src(['**/*.twig', '!includes/**'], { cwd: paths.src + 'twig' })
+		.src(['*.twig'], { cwd: paths.src + 'twig' })
         .pipe($.plumber(plumberErrorHandler))
         .pipe($.twig({
             errorLogToConsole: false,
