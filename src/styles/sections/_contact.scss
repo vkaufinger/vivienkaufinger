@@ -53,7 +53,7 @@
             opacity: 0;
             transform: scaleX(0);
             transform-origin: left;
-            transition: 600ms cubic-bezier(0.07, 0.51, 0.12, 1);
+            transition: 600ms cubic-bezier($easing);
             transition-property: background-color, opacity, transform;
             content: "";
         }
@@ -68,7 +68,7 @@
 .contact__link-icon {
     position: relative;
     fill: colors(grape);
-    transition: 600ms cubic-bezier(0.07, 0.51, 0.12, 1);
+    transition: 600ms cubic-bezier($easing);
     @include mq($until: sm) {
         width: 5px;
         height: 10px;
@@ -89,7 +89,7 @@
 
 .contact__wording {
     color: colors(grape);
-    transition: 600ms cubic-bezier(0.07, 0.51, 0.12, 1);
+    transition: 600ms cubic-bezier($easing);
     @include mq($until: sm) {
         margin-left: 10px;
         transition-property: transform;

@@ -19,11 +19,4 @@ $mq-breakpoints: (
 
 $mq-show-breakpoints: (xs, sm, md, lg);
 
-$fonts: (
-	league: #{"League Spartan", "Helvetica", "Arial", sans-serif},
-);
-
-@function fonts($name) {
-	@return map-get($fonts, $name);
-}
-
+$easing: .65,.05,.36,1;

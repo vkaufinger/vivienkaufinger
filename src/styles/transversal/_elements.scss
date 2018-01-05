@@ -48,9 +48,28 @@
     }
     @include mq($from: lg) {
         a {
-            transition: color 500ms cubic-bezier(0.07, 0.51, 0.12, 1);
+            position: relative;
+            display: block;
+            margin: -15px 0 -15px -15px;
+            padding: 15px;
+            transition: color 250ms cubic-bezier($easing);
+            &::before {
+                position: absolute;
+                z-index: -1;
+                pointer-events: none;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: #fff;
+                transition: opacity 250ms cubic-bezier($easing);
+                content: "";
+            }
             &:hover {
-                color: colors(tomato);
+                color: colors(title);
+                &::before {
+                    opacity: 0;
+                }
             }
         }
     }
