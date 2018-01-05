@@ -3,7 +3,7 @@
         <ul class="footer__links  row  center-xs">
             {% for link in data.iconLinks %}
                 <li class="footer__links-item  col-xs  col-lg">
-                    <a class="footer__links-link" href="{{ link.url }}" target="_blank">
+                    <a class="footer__links-link" href="{{ link.url }}" target="_blank" rel="noopener">
                         <svg class="footer__links-icon" aria-hidden="true">
                             <use xlink:href="#{{ link.title }}"></use>
                         </svg>
