@@ -18,7 +18,9 @@
                     </header>
                     <div class="project__poster  col-xs  first-xs" data-speed="0">
                         <div class="project__poster-inner">
-                            <img class="project__poster-img" src="{{ project.poster }}" alt="{{- project.title -}}">
+                            <div class="project__poster-video">
+                                <video class="project__poster-player" src="{{ data.imgPath ~ project.video }}" poster="{{ data.imgPath ~ project.poster}}" muted loop></video>
+                            </div>
                             <div class="project__poster-shadow" style="box-shadow: 0 0 100px 70px {{ project.color }};"></div>
                         </div>
                     </div>
