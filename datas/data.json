@@ -33,7 +33,7 @@
         {
             "title":       "Klorane apaise",
             "poster":      "img2.jpeg",
-            "video":       "video-1.mp4",
+            "video":       "video-2.mp4",
             "client":      "Pierre Fabre",
             "description": "Website experience",
             "year":        "2017",
@@ -44,7 +44,7 @@
         {
             "title":       "Om.net",
             "poster":      "img3.jpeg",
-            "video":       "video-1.mp4",
+            "video":       "video-3.mp4",
             "client":      "Olympique de Marseille",
             "description": "Website portail",
             "year":        "2015",
