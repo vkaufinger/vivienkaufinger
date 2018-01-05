@@ -157,22 +157,6 @@
         }
 
 
-        // Redraw shapes in scene after view resizing
-        function sceneResize () {
-            view.onResize = debounce(200, function (e) {
-                shapes.forEach(function (el) {
-                    el.blob.clear();
-                });
-
-                dataShapes();
-
-                shapes.forEach(function (el) {
-                    el.blob = new Blob(el);
-                });
-            });
-        }
-
-
         function sceneRAF () {
             view.onFrame = function (e) {
                 shapes.forEach(function (el) {
@@ -218,8 +202,6 @@
             sceneRAF();
 
             sceneMousemove();
-
-            sceneResize();
         }
 
 
@@ -227,9 +209,24 @@
             sceneInit('blob-canvas');
         }
 
+
+        function resize () {
+            // Redraw shapes in scene after view resizing
+            shapes.forEach(function (el) {
+                el.blob.clear();
+            });
+
+            dataShapes();
+
+            shapes.forEach(function (el) {
+                el.blob = new Blob(el);
+            });
+        }
+
         return {
             name: globName,
-            ready: ready
+            ready: ready,
+            resize: resize
         };
     }();
 
