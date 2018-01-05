@@ -191,11 +191,16 @@
 
 
         function sceneInit (el) {
-            if (!document.getElementById(el)) {
+            const canvas = document.getElementById(el);
+
+            if (!canvas) {
                 return;
             }
 
-            scene = paper.setup(el);
+            // Add attribute with js because is not W3C valid :-/
+            canvas.setAttribute('resize', true);
+
+            scene = paper.setup(canvas);
             view = scene.view;
             Point = scene.Point;
             Path = scene.Path;
