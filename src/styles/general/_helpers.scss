@@ -1,3 +1,5 @@
+@import "../../node_modules/sass-mq/_mq";
+
 // Fluid Typography -> https://css-tricks.com/snippets/css/fluid-typography/
 @function strip-unit($value) {
     @return $value / ($value * 0 + 1);
