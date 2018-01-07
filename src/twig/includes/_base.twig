@@ -46,7 +46,9 @@
             {%- endif -%}
         </title>
         <link rel="canonical" href="{{ data.siteRoot }}" />
-        <link rel="stylesheet" href="{{ data.siteRoot }}dist/styles/main.min.css">
+        <!-- inject-css dist/styles/critical.css -->
+        <link rel="preload" href="./dist/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="./dist/styles/main.css"></noscript>
     </head>
     <body>
         <div class="svg-sprite">

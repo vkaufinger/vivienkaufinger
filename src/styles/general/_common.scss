@@ -29,15 +29,3 @@ img:not([alt]) {
     height: 0;
     visibility: hidden;
 }
-
-// Add loader on cursor
-.js-ajax-loading * {
-    cursor: wait !important;
-}
-
-// Unbind data-ajax-link children
-.js-ajax-link {
-    * {
-        pointer-events: none;
-    }
-}

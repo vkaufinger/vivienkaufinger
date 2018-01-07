@@ -136,7 +136,6 @@ gulp.task('css', function () {
             comments: false,
             forceMediaMerge: true
         }))
-        .pipe($.rename('main.min.css'))
         .pipe(gulp.dest('styles', { cwd: paths.dist }))
         .pipe($.livereload())
     ;
@@ -145,7 +144,7 @@ gulp.task('css', function () {
 gulp.task('styles', ['fontCopy', 'css']);
 
 //TWIG
-gulp.task('twig', ['imgSvg'], function () {
+gulp.task('twig', ['styles', 'imgSvg'], function () {
     return gulp
 		.src(['*.twig'], { cwd: paths.src + 'twig' })
         .pipe($.plumber(plumberErrorHandler))
@@ -160,11 +159,20 @@ gulp.task('twig', ['imgSvg'], function () {
     ;
 });
 
+// Compile twig + inject css
+gulp.task('templating', ['twig'], function () {
+    return gulp
+        .src('./*.html')
+        .pipe($.injectCss())
+        .pipe(gulp.dest('.'))
+    ;
+});
+
 
 /**
 * BUILD
 */
-gulp.task('build', ['clean', 'images', 'js', 'styles', 'twig']);
+gulp.task('build', ['clean', 'images', 'js', 'styles', 'templating']);
 
 gulp.task('default', ['build'], function () {
     $.notify({
@@ -179,16 +187,16 @@ gulp.task('watch', ['build'], function () {
     env = 'dev';
     // Images
     gulp.watch(['**/*', '!svg-icons', '!svg-icons/*'], { cwd: paths.src + 'images/' }, ['imgCopy']);
-    gulp.watch('*.svg', { cwd: paths.src + 'images/svg-icons' }, ['twig']);
+    gulp.watch('*.svg', { cwd: paths.src + 'images/svg-icons' }, ['templating']);
     // Fonts
     gulp.watch('**/*', { cwd: paths.src + 'fonts/' }, [ 'fontCopy' ]);
     // CSS
-    gulp.watch('**/*', { cwd: paths.src + 'styles/' }, [ 'css' ]);
+    gulp.watch('**/*', { cwd: paths.src + 'styles/' }, [ 'templating' ]);
     // JS
     gulp.watch('**/*', { cwd: paths.src + 'scripts/modules/' }, [ 'js' ]);
     // Twig
-    gulp.watch('**/*', { cwd: 'datas/' }, [ 'twig' ]);
-    gulp.watch('**/*', { cwd: paths.src + 'twig/' }, [ 'twig' ]);
+    gulp.watch('**/*', { cwd: 'datas/' }, [ 'templating' ]);
+    gulp.watch('**/*', { cwd: paths.src + 'twig/' }, [ 'templating' ]);
     $.livereload({ start: true });
 });
 

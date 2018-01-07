@@ -43,6 +43,7 @@
     "bubble-event": "^1.0.10",
     "flexboxgrid": "^6.3.1",
     "gsap": "^1.20.3",
+    "gulp-inject-css": "^0.3.8",
     "ismobilejs": "^0.4.1",
     "minireset.css": "0.0.3",
     "paper": "^0.11.5",
