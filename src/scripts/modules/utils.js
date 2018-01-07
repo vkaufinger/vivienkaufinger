@@ -20,23 +20,25 @@
 
         // Preload all images on window load
         var imagesPreload = {
-            srcSet: function () {
-                loader.urls.forEach(function (url) {
-                    var img = document.querySelector('img[data-src="' + url + '"]');
-                    if (img) {
-                        img.setAttribute('src', loader.get(url).src);
-                        img.removeAttribute('data-src');
-                        // Refresh scroll
-                        smooth.resize();
+            srcSet: () => {
+                loader.urls.forEach((url) => {
+                    var player = document.querySelector('video[data-poster="' + url + '"]');
+                    if (player) {
+                        player.setAttribute('poster', loader.get(url).src);
+                        player.removeAttribute('data-poster');
+                    } else {
+                        player = document.querySelector('video[data-src="' + url + '"]');
+                        player.setAttribute('src', loader.get(url).src);
+                        player.removeAttribute('data-src');
                     }
                 });
             },
             progress: function (progress) {
-                // console.log(progress)
+                console.log(progress);
             },
             init: function () {
-                imagesToLoad.forEach(function (url) {
-                    loader.addImage(url);
+                mediasToLoad.forEach((url) => {
+                    loader.add(url);
                 });
 
                 loader.on('progress', imagesPreload.progress);
@@ -77,7 +79,7 @@
 
 
         function ready () {
-            if (window.imagesToLoad) {
+            if (window.mediasToLoad) {
                 imagesPreload.init();
             }
 

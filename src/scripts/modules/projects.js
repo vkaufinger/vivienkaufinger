@@ -11,7 +11,7 @@
         var smooth;
 
 
-        // Disable video loadin on tablet and desktop layout
+        // Disable video loading on tablet and mobile layout
         function preventVideoLoading () {
             if (vw > 1200) {
                 return;

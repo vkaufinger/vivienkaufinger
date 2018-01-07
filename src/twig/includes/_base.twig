@@ -63,14 +63,15 @@
         </div>
         <canvas id="blob-canvas" class="blobs"></canvas>
         <script>
-            // var imagesToLoad = [
-            //     {%- for project in data.projects -%}
-            //         '{{- project.poster -}}'
-            //         {%- if not loop.last %},{% endif -%}
-            //     {%- endfor -%}
-            // ];
+            var mediasToLoad = [
+                {%- for project in data.projects -%}
+                    '{{- data.imgPath ~ project.poster -}}',
+                    '{{- data.imgPath ~ project.video -}}'
+                    {%- if not loop.last %},{% endif -%}
+                {%- endfor -%}
+            ];
         </script>
-        <script defer src="{{ data.siteRoot }}dist/scripts/main.min.js" charset="utf-8"></script>
+        <script defer src="./dist/scripts/main.min.js" charset="utf-8"></script>
         {%- if data.trackingID is not empty -%}
             <script>
                 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
