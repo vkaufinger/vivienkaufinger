@@ -48,7 +48,7 @@
     "minireset.css": "0.0.3",
     "paper": "^0.11.5",
     "pjax": "^0.2.4",
-    "preloader": "^4.0.2",
+    "prejs": "^1.2.6",
     "request-interval": "^2.0.0",
     "sass-mq": "^3.3.2",
     "smooth-scrolling": "^2.3.9",

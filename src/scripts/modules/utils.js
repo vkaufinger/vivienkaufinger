@@ -6,48 +6,35 @@
     */
     var myModule = function () {
         var isMobile = require('ismobilejs');
-        var preloader = require('preloader');
+        var PreJS = require('prejs').default;
         var Parallax = require('./smooth-scroll').Parallax;
-        var loader = preloader({
-            xhrImages: true,
-            throttle: 1
-        });
         var vw = window.innerWidth;
         var vh = window.innerHeight;
         var offset = vh * 0.5;
         var smooth;
+        var pre;
 
 
-        // Preload all images on window load
-        var imagesPreload = {
-            srcSet: () => {
-                loader.urls.forEach((url) => {
-                    var player = document.querySelector('video[data-poster="' + url + '"]');
-                    if (player) {
-                        player.setAttribute('poster', loader.get(url).src);
-                        player.removeAttribute('data-poster');
-                    } else {
-                        player = document.querySelector('video[data-src="' + url + '"]');
-                        player.setAttribute('src', loader.get(url).src);
-                        player.removeAttribute('data-src');
-                    }
-                });
-            },
-            progress: function (progress) {
-                console.log(progress);
-            },
-            init: function () {
-                mediasToLoad.forEach((url) => {
-                    loader.add(url);
-                });
-
-                loader.on('progress', imagesPreload.progress);
-
-                loader.on('complete', imagesPreload.srcSet);
-
-                loader.load();
+        // Preload all media on window load
+        function mediasPreload () {
+            if (!window.mediasToLoad) {
+                return;
             }
-        };
+
+            pre = new PreJS();
+
+            pre.on('loaded', (item) => {
+                var player = document.querySelector('video[data-poster="' + item.url + '"]');
+                if (player) {
+                    player.setAttribute('poster', item.url);
+                    player.removeAttribute('data-poster');
+                } else {
+                    player = document.querySelector('video[data-src="' + item.url + '"]');
+                    player.setAttribute('src', item.url);
+                    player.removeAttribute('data-src');
+                }
+            });
+        }
 
 
         // Smooth scroll with parallaxed elements
@@ -70,22 +57,25 @@
 
             // Expose smooth instance for blob module
             myModule.smooth = smooth;
-
-            // Init smooth on window load to fix bug calculation
-            window.onload = function () {
-                smooth.init();
-                // Disable smooth during blob appear
-                smooth.off();
-            };
         }
 
 
         function ready () {
-            if (window.mediasToLoad) {
-                imagesPreload.init();
-            }
+            mediasPreload();
 
             parallaxInit();
+
+            window.onload = function () {
+                if (window.mediasToLoad) {
+                    pre.load(mediasToLoad);
+                }
+
+                // Init smooth on window load to fix bug calculation
+                smooth.init();
+
+                // Disable smooth during blob appear
+                smooth.off();
+            };
         }
 
 

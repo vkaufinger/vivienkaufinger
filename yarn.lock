@@ -623,10 +623,6 @@ base64-js@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
 
-base64mime@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/base64mime/-/base64mime-0.0.3.tgz#06e3ed104cc5d1b3dffe667a90430b6878eccacd"
-
 bcrypt-pbkdf@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz#63bc5dcb61331b92bc05fd528953c33462a06f8d"
@@ -2661,10 +2657,6 @@ js-base64@^2.1.8:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.0.tgz#9e566fee624751a1d720c966cd6226d29d4025aa"
 
-js-oop@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/js-oop/-/js-oop-1.0.0.tgz#754fa5c2e4490bdb1f9d30084494371ab70f17a6"
-
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
@@ -3660,12 +3652,9 @@ prefix@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/prefix/-/prefix-1.0.0.tgz#f12bcaea03e580be7929fb365c301184558a0356"
 
-preloader@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/preloader/-/preloader-4.0.2.tgz#cf5dd97741a51e208e476111fc6e9af2a71832a5"
-  dependencies:
-    base64mime "0.0.3"
-    js-oop "^1.0.0"
+prejs@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/prejs/-/prejs-1.2.6.tgz#a0d01a7b95f25bffa349c181665694b7c24c89f6"
 
 preserve@^0.2.0:
   version "0.2.0"
