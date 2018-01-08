@@ -109,7 +109,7 @@
                 if (el.classList.contains('in-view')) {
                     var top = el.getBoundingClientRect().top;
                     var transform = (top - offset) / (vh - offset);
-                    transform = Math.max(0, Math.min(transform, 1));
+                    transform = Math.max(0, Math.min(transform, 1)).toFixed(2);
 
                     items.forEach((el) => {
                         el.style.transform = 'skewX(' + -25 * transform + 'deg) rotate(' + -25 * transform + 'deg)';
