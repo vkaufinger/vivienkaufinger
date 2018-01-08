@@ -22,6 +22,17 @@
             margin-top: 10px;
         }
     }
+    @include mq($from: md) {
+        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        @for $i from 2 through 3 {
+            &:nth-child(#{$i}) {
+                transition-delay: #{($i - 1) * 75}ms;
+            }
+        }
+        .blobs-loading & {
+            transform: translateX(100%);
+        }
+    }
 }
 .footer__links-link {
     display: inline-block;

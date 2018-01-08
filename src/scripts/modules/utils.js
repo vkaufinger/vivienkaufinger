@@ -74,6 +74,8 @@
             // Init smooth on window load to fix bug calculation
             window.onload = function () {
                 smooth.init();
+                // Disable smooth during blob appear
+                smooth.off();
             };
         }
 
