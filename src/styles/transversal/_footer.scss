@@ -1,15 +1,21 @@
 .footer {
+    @include mq($until: md) {
+        margin-bottom: 20px;
+        &--bottom {
+            display: none;
+        }
+    }
     @include mq($from: md) {
         position: absolute;
         z-index: 1;
         right: 0;
         width: 80px;
-    }
-    @include mq($from: md, $until: lg) {
-        top: 70px;
-    }
-    @include mq($from: lg) {
-        top: 195px;
+        &--top {
+            top: 70px;
+        }
+        &--bottom {
+            bottom: 70px;
+        }
     }
 }
 
@@ -31,6 +37,7 @@
         }
         .blobs-loading & {
             transform: translateX(100%);
+            transition: none;
         }
     }
 }
@@ -38,7 +45,7 @@
     display: inline-block;
     vertical-align: top;
     @include mq($until: sm) {
-        padding: 10px 10px 20px;
+        padding: 15px;
     }
     @include mq($from: sm) {
         padding: 10px;
@@ -61,9 +68,10 @@
     @include mq($from: md) {
         width: 20px;
         height: 20px;
-        fill: #fff;
-        transition: fill 500ms ease;
-        .is-dark & {
+        .footer--top & {
+            fill: #fff;
+        }
+        .footer--bottom & {
             fill: colors(text);
         }
     }
