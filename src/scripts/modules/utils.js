@@ -23,6 +23,10 @@
                     player.setAttribute('poster', player.getAttribute('data-poster'));
                     player.removeAttribute('data-poster');
 
+                    // Disable video loading on tablet and mobile layout
+                    if (vw < 1200) {
+                        return;
+                    }
                     player.setAttribute('src', player.getAttribute('data-src'));
                     player.removeAttribute('data-src');
                 });

@@ -11,21 +11,8 @@
         var smooth;
 
 
-        // Disable video loading on tablet and mobile layout
-        function preventVideoLoading () {
-            if (vw > 1200) {
-                return;
-            }
-            document.querySelectorAll('.project__poster-player').forEach((el) => {
-                el.removeAttribute('src');
-            });
-        }
-
-
         function ready () {
             smooth = require('./utils.js').smooth;
-
-            preventVideoLoading();
         }
 
 
