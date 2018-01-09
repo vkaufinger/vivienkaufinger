@@ -17,9 +17,15 @@
         // Preload all media on window load
         function deferLoading () {
             var players = document.querySelectorAll('.project__poster-player');
-            players.forEach((player) => {
-                player.setAttribute('poster', player.getAttribute('data-poster'));
-                player.setAttribute('src',    player.getAttribute('data-src'));
+
+            window.addEventListener('load', () => {
+                players.forEach((player) => {
+                    player.setAttribute('poster', player.getAttribute('data-poster'));
+                    player.removeAttribute('data-poster');
+
+                    player.setAttribute('src', player.getAttribute('data-src'));
+                    player.removeAttribute('data-src');
+                });
             });
         }
 
@@ -27,14 +33,15 @@
         // Smooth scroll with parallaxed elements
         function parallaxInit () {
             var wrapper = document.getElementById('#main-wrapper');
-            var parallaxEls = document.querySelectorAll('[data-speed]');
+
+            // Enable parallax only from desktop
+            var parallaxEls = window.innerWidth < 1200 ? false : document.querySelectorAll('[data-speed]');
 
             smooth = new Parallax({
                 extends: true,
                 native: false,
                 section: wrapper,
-                // Enable parallax only from desktop
-                divs: window.innerWidth < 1200 ? false : parallaxEls,
+                divs: parallaxEls,
                 ease: isMobile.any ? 0.1 : 0.075,
                 vs: {
                     mouseMultiplier: 0.25,
@@ -48,18 +55,9 @@
 
 
         function ready () {
+            deferLoading();
 
             parallaxInit();
-
-            window.onload = function () {
-                deferLoading();
-
-                // Init smooth on window load to fix bug calculation
-                smooth.init();
-
-                // Disable smooth during blob appear
-                smooth.off();
-            };
         }
 
 

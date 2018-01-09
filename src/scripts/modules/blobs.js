@@ -9,6 +9,7 @@
         var debounce = require('throttle-debounce/debounce');
         var TweenLite = require('gsap/TweenLite');
         var body = document.body;
+        var blobsAreReady = false;
         var shapes;
         var scene;
         var view;
@@ -83,7 +84,7 @@
                 this.fitRect.remove();
             }
             animate (event) {
-                if (!body.classList.contains('blobs-loading')) {
+                if (blobsAreReady) {
                     this.group.position.y = this.scrollY - (smooth.vars.current.toFixed(2) * this.scrollSpeed);
                 }
 
@@ -186,22 +187,24 @@
 
 
         function sceneIntro () {
-            var complete = false;
             var introShapes = shapes.filter(el => el.section === 'intro');
 
             introShapes.forEach((el, index) => {
                 TweenLite.fromTo(el.blob.group.position, 1.5, { y: -vh }, { delay: 0.1 * index, y: el.blob.scrollY, ease: Power4.easeOut, onComplete: () => {
-                    if (complete) {
+                    if (blobsAreReady) {
                         return;
                     }
 
-                    complete = true;
+                    blobsAreReady = true;
 
-                    body.classList.remove('blobs-loading');
-
-                    smooth.on();
+                    // Init smooth after animation to fix bug calculation
+                    smooth.init();
                 }});
             });
+
+            setTimeout(() => {
+                body.classList.remove('blobs-loading');
+            }, 1000);
         }
 
 
