@@ -6,7 +6,6 @@
     */
     var myModule = function () {
         var paper = require('paper');
-        var debounce = require('throttle-debounce/debounce');
         var TweenLite = require('gsap/TweenLite');
         var body = document.body;
         var blobsAreReady = false;
