@@ -63,15 +63,7 @@
             {% include './footer.twig' with { position: 'bottom' } %}
         </div>
         <canvas id="blob-canvas" class="blobs"></canvas>
-        <script>
-            var mediasToLoad = [
-                {%- for project in data.projects -%}
-                    '{{- data.imgPath ~ project.poster -}}',
-                    '{{- data.imgPath ~ project.video -}}'
-                    {%- if not loop.last %},{% endif -%}
-                {%- endfor -%}
-            ];
-        </script>
+
         <script defer src="./dist/scripts/main.min.js" charset="utf-8"></script>
         {%- if data.trackingID is not empty -%}
             <script>

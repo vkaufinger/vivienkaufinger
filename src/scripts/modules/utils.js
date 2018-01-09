@@ -6,7 +6,6 @@
     */
     var myModule = function () {
         var isMobile = require('ismobilejs');
-        var PreJS = require('prejs').default;
         var Parallax = require('./smooth-scroll').Parallax;
         var vw = window.innerWidth;
         var vh = window.innerHeight;
@@ -16,23 +15,11 @@
 
 
         // Preload all media on window load
-        function mediasPreload () {
-            if (!window.mediasToLoad) {
-                return;
-            }
-
-            pre = new PreJS();
-
-            pre.on('loaded', (item) => {
-                var player = document.querySelector('video[data-poster="' + item.url + '"]');
-                if (player) {
-                    player.setAttribute('poster', item.url);
-                    player.removeAttribute('data-poster');
-                } else {
-                    player = document.querySelector('video[data-src="' + item.url + '"]');
-                    player.setAttribute('src', item.url);
-                    player.removeAttribute('data-src');
-                }
+        function deferLoading () {
+            var players = document.querySelectorAll('.project__poster-player');
+            players.forEach((player) => {
+                player.setAttribute('poster', player.getAttribute('data-poster'));
+                player.setAttribute('src',    player.getAttribute('data-src'));
             });
         }
 
@@ -61,14 +48,11 @@
 
 
         function ready () {
-            mediasPreload();
 
             parallaxInit();
 
             window.onload = function () {
-                if (window.mediasToLoad) {
-                    pre.load(mediasToLoad);
-                }
+                deferLoading();
 
                 // Init smooth on window load to fix bug calculation
                 smooth.init();

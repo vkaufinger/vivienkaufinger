@@ -3652,10 +3652,6 @@ prefix@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/prefix/-/prefix-1.0.0.tgz#f12bcaea03e580be7929fb365c301184558a0356"
 
-prejs@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/prejs/-/prejs-1.2.6.tgz#a0d01a7b95f25bffa349c181665694b7c24c89f6"
-
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
