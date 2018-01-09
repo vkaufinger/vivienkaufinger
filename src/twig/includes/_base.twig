@@ -37,8 +37,6 @@
         </title>
         <link rel="canonical" href="{{ data.siteRoot }}" />
         <!-- inject-css dist/styles/critical.css -->
-        <link rel="preload" href="./dist/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="./dist/styles/main.css"></noscript>
     </head>
     <body class="blobs-loading">
         <div class="svg-sprite">
@@ -53,7 +51,7 @@
             {% include './footer.twig' with { position: 'bottom' } %}
         </div>
         <canvas id="blob-canvas" class="blobs"></canvas>
-
+        <link href="./dist/styles/main.css" rel="stylesheet">
         <script defer src="./dist/scripts/main.min.js" charset="utf-8"></script>
         {%- if data.trackingID is not empty -%}
             <script>
