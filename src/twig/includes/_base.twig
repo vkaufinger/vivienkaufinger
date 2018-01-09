@@ -4,28 +4,18 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ data.imgPath }}/static/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ data.imgPath }}/static/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ data.imgPath }}/static/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ data.imgPath }}/static/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ data.imgPath }}/static/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ data.imgPath }}/static/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ data.imgPath }}/static/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ data.imgPath }}/static/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ data.imgPath }}/static/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="{{ data.imgPath }}/static/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ data.imgPath }}/static/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ data.imgPath }}/static/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ data.imgPath }}/static/favicon/favicon-16x16.png">
-        <link rel="manifest" href="{{ data.imgPath }}/static/favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="{{ data.imgPath }}/static/favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./dist/images/static/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./dist/images/static/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="./dist/images/static/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="./dist/images/static/favicon-16x16.png" sizes="16x16" />
+        <meta name="application-name" content="Vivien Kaufinger"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="./dist/images/static/mstile-144x144.png" />
         <meta property="og:title" content="Vivien Kaufinger" />
         <meta property="og:url" content="{{ data.siteRoot }}" />
         <meta property="og:image" content="https://dummyimage.com/600x400/000/fff&text=VK" />
         {%- if data.siteDescription is not empty -%}
-        <meta property="og:description" content="{{ data.siteDescription }}" />
+            <meta property="og:description" content="{{ data.siteDescription }}" />
         {%- endif -%}
         <meta property="og:site_name" content="Vivien Kaufinger">
         <meta name="twitter:card" content="summary_large_image" />
