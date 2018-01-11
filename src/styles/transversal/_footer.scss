@@ -1,77 +1,17 @@
 .footer {
-    @include mq($until: md) {
-        margin-bottom: 20px;
-        &--bottom {
-            display: none;
+    .icon-links {
+        @include mq($until: md) {
+            margin-bottom: 20px;
         }
-    }
-    @include mq($from: md) {
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        width: 80px;
-        &--top {
-            top: 70px;
-        }
-        &--bottom {
+        @include mq($from: md) {
             bottom: 70px;
         }
     }
-}
-
-.footer__links-item {
-    &:not(:first-child) {
-        @include mq($from: sm, $until: md) {
-            margin-left: 10px;
+    .icon-links__icon {
+        @include mq($until: md) {
+            fill: colors(text);
         }
         @include mq($from: md) {
-            margin-top: 10px;
-        }
-    }
-    @include mq($from: md) {
-        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-        @for $i from 2 through 3 {
-            &:nth-child(#{$i}) {
-                transition-delay: #{($i - 1) * 75}ms;
-            }
-        }
-        .blobs-loading & {
-            transform: translateX(100%);
-            transition: none;
-        }
-    }
-}
-.footer__links-link {
-    display: inline-block;
-    vertical-align: top;
-    @include mq($until: sm) {
-        padding: 15px;
-    }
-    @include mq($from: sm) {
-        padding: 10px;
-    }
-}
-
-.footer__links-icon {
-    display: block;
-    @include mq($until: sm) {
-        width: 25px;
-        height: 25px;
-    }
-    @include mq($from: sm, $until: md) {
-        width: 30px;
-        height: 30px;
-    }
-    @include mq($until: md) {
-        fill: colors(text);
-    }
-    @include mq($from: md) {
-        width: 20px;
-        height: 20px;
-        .footer--top & {
-            fill: #fff;
-        }
-        .footer--bottom & {
             fill: colors(text);
         }
     }

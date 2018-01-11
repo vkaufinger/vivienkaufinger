@@ -3,6 +3,20 @@
     z-index: 1;
     color: #fff;
     line-height: 1.25;
+
+    .icon-links {
+        @include mq($until: md) {
+            display: none;
+        }
+        @include mq($from: md) {
+            top: 70px;
+        }
+    }
+    .icon-links__icon {
+        @include mq($from: md) {
+            fill: #fff;
+        }
+    }
 }
 
 .header__inner {

@@ -1,23 +1,5 @@
-{%- if position == 'top' -%}
-    <footer class="footer  footer--{{ position }}">
-{%- else -%}
-    <div class="footer  footer--{{ position }}">
-{%- endif -%}
+<footer class="footer">
     <div class="container-fluid">
-        <ul class="footer__links  row  center-xs">
-            {% for link in data.iconLinks %}
-                <li class="footer__links-item  col-sm-1  col-md">
-                    <a class="footer__links-link" href="{{ link.url }}" target="_blank" rel="noopener">
-                        <svg class="footer__links-icon" aria-hidden="true">
-                            <use xlink:href="#{{ link.title }}"></use>
-                        </svg>
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
+        {% include 'icon-links.twig' %}
     </div>
-{%- if position == 'top' -%}
-    </footer>
-{%- else -%}
-    </div>
-{%- endif -%}
+</footer>
