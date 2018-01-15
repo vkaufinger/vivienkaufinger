@@ -55,11 +55,11 @@
     &::after {
         position: absolute;
         top: 0;
-        right: 0;
-        bottom: 0;
+        right: 2px;
+        bottom: 2px;
         left: 0;
         border-radius: 10px;
-        box-shadow: 3px 3px 0 0px #aaa5bd;
+        box-shadow: 4px 4px 0 0px #aaa5bd;
         content: "";
     }
 }
@@ -67,7 +67,7 @@
 .project__poster-video {
     display: block;
     position: relative;
-    padding-top: percentage(12/16);
+    padding-top: percentage(954/1250);
     z-index: 1;
     border-radius: 10px;
     overflow: hidden;

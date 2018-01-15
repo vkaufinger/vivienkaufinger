@@ -23,36 +23,36 @@
     "projects": [
         {
             "title":       "W2P digital",
-            "poster":      "img1.jpeg",
-            "video":       "video-1.mp4",
+            "poster":      "w2p_digital.jpg",
+            "video":       "w2p_digital.mp4",
             "client":      "W2P Digital",
             "description": "Agency portfolio",
             "year":        "2017",
             "team":        "W2P",
-            "color":       "#858bdb",
+            "color":       "#0101ee",
             "url":         "https://www.w2p-digital.com"
         },
         {
             "title":       "Klorane apaise",
-            "poster":      "img2.jpeg",
-            "video":       "video-2.mp4",
+            "poster":      "klorane_apaise.jpg",
+            "video":       "klorane_apaise.mp4",
             "client":      "Pierre Fabre",
             "description": "Website experience",
             "year":        "2017",
             "team":        "W2P",
             "color":       "#db8597",
-            "url":         ""
+            "url":         "https://kloraneapaise.klorane.com/"
         },
         {
-            "title":       "Om.net",
-            "poster":      "img3.jpeg",
-            "video":       "video-3.mp4",
-            "client":      "Olympique de Marseille",
-            "description": "Website portail",
+            "title":       "I fly A380",
+            "poster":      "i_fly_a380.jpg",
+            "video":       "i_fly_a380.mp4",
+            "client":      "Airbus",
+            "description": "Booking website",
             "year":        "2015",
             "team":        "X-Prime",
-            "color":       "#31a8f0",
-            "url":         ""
+            "color":       "#334ba8",
+            "url":         "https://www.iflya380.com/"
         }
     ],
     "experiences": [

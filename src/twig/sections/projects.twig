@@ -21,8 +21,8 @@
                             <div class="project__poster-video">
                                 <video
                                     class="project__poster-player"
-                                    data-src="{{ data.imgPath ~ project.video }}"
-                                    data-poster="{{ data.imgPath ~ project.poster}}"
+                                    data-src="{{ data.imgPath ~ 'videos/' ~ project.video }}"
+                                    data-poster="{{ data.imgPath ~ 'posters/' ~ project.poster}}"
                                     muted
                                     loop
                                 ></video>
