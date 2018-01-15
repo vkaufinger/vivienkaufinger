@@ -21,10 +21,11 @@
                             <div class="project__poster-video">
                                 <video
                                     class="project__poster-player"
-                                    data-src="{{ data.imgPath ~ 'videos/' ~ project.video }}"
                                     data-poster="{{ data.imgPath ~ 'posters/' ~ project.poster}}"
+                                    data-src="{{ data.imgPath ~ 'videos/' ~ project.video }}"
                                     muted
                                     loop
+                                    playsinline
                                 ></video>
                             </div>
                             <div class="project__poster-shadow" style="box-shadow: 0 0 100px 70px {{ project.color }};"></div>
