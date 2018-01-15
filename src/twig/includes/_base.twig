@@ -4,16 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./dist/images/static/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./dist/images/static/apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="./dist/images/static/favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="./dist/images/static/favicon-16x16.png" sizes="16x16" />
-        <meta name="application-name" content="Vivien Kaufinger"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ data.imgPath }}static/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ data.imgPath }}static/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="{{ data.imgPath }}static/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{ data.imgPath }}static/favicon-16x16.png" sizes="16x16" />
+        <meta name="application-name" content="{{ data.siteTitle }}"/>
         <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="./dist/images/static/mstile-144x144.png" />
-        <meta property="og:title" content="Vivien Kaufinger" />
+        <meta name="msapplication-TileImage" content="{{ data.imgPath }}static/mstile-144x144.png" />
+        <meta property="og:title" content="{{ data.siteTitle }}" />
         <meta property="og:url" content="{{ data.siteRoot }}" />
-        <meta property="og:image" content="https://dummyimage.com/600x400/000/fff&text=VK" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="{{ data.siteRoot ~ '/dist/images/' }}static/og.jpg" />
         {%- if data.siteDescription is not empty -%}
             <meta property="og:description" content="{{ data.siteDescription }}" />
         {%- endif -%}
@@ -22,15 +23,12 @@
         <meta name="twitter:site" content="@vivienkaufinger" />
         <meta name="twitter:creator" content="@vivienkaufinger" />
         <meta name="twitter:title" content="@vivienkaufinger" />
-        <meta name="twitter:image" content="https://dummyimage.com/600x400/000/fff&text=VK">
+        <meta name="twitter:image" content="{{ data.siteRoot ~ '/dist/images/' }}static/og.jpg">
         {%- if data.siteDescription is not empty -%}
             <meta name="twitter:description" content="{{ data.siteDescription }}" />
             <meta name="description" content="{{ data.siteDescription }}">
         {%- endif -%}
         <title>
-            {%- if page.title is not empty -%}
-                {{- page.title ~ ' | ' -}}
-            {%- endif -%}
             {%- if data.siteTitle is not empty -%}
                 {{- data.siteTitle -}}
             {%- endif -%}
