@@ -51,7 +51,7 @@
                 var transform = (top - offset) / (vh - offset);
                 transform = Math.max(0, Math.min(1 - transform, 1));
 
-                poster.style.transform = 'rotateX(' + -55 * transform + 'deg) rotateZ(' + 45 * transform + 'deg)';
+                poster.querySelector('.project__poster-inner').style.transform = 'rotateX(' + -55 * transform + 'deg) rotateZ(' + 45 * transform + 'deg)';
             }
         }
 
