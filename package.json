@@ -33,8 +33,8 @@
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.0.0",
     "gulp-twig": "^1.1.1",
-    "gulp-uglify-es": "^0.1.4",
-    "gulp-watch": "^4.3.5",
+    "gulp-uglify-es": "^1.0.0",
+    "gulp-watch": "^5.0.0",
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1"
   },
@@ -49,7 +49,7 @@
     "paper": "^0.11.5",
     "pjax": "^0.2.4",
     "request-interval": "^2.0.0",
-    "sass-mq": "^3.3.2",
+    "sass-mq": "^4.0.2",
     "smooth-scrolling": "^2.3.9",
     "throttle-debounce": "^1.0.1"
   }
