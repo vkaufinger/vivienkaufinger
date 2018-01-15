@@ -42,7 +42,7 @@
 .header__title {
     font-weight: 700;
     @include mq($until: sm) {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     @include mq($from: sm, $until: md) {
         font-size: 3rem;
