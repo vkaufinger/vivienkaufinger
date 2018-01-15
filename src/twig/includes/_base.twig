@@ -53,12 +53,13 @@
         <link href="./dist/styles/main.css" rel="stylesheet">
         <script defer src="./dist/scripts/main.min.js" charset="utf-8"></script>
         {%- if data.trackingID is not empty -%}
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ data.trackingID }}"></script>
             <script>
-                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-                ga('create', {{ data.trackingID }}, 'auto');
-                ga('send', 'pageview');
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '{{ data.trackingID }}');
             </script>
-            <script async src='https://www.google-analytics.com/analytics.js'></script>
         {%- endif -%}
     </body>
 </html>
