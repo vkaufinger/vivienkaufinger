@@ -10,7 +10,7 @@
 
 .list-section {
     @include mq($until: sm) {
-        margin-top: 10vh;
+        margin-top: 15vh;
     }
     @include mq($from: sm, $until: lg) {
         margin-top: 20vh;
@@ -23,6 +23,17 @@
 .list {
     @include mq($until: sm) {
         margin-top: 5px;
+        .skills & {
+            display: block; // Disable flexbox
+            margin: 5px 0 0;
+            column-count: 2;
+        }
+        a {
+            transition: color 250ms cubic-bezier($easing);
+            &:hover {
+                color: colors(tomatoe);
+            }
+        }
     }
     @include mq($from: sm) {
         margin-top: 10px;
