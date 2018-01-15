@@ -1,6 +1,6 @@
 {
     "siteRoot":            "https://vivienkaufinger.com",
-    "imgPath":             "https://vivienkaufinger.com/dist/images/",
+    "imgPath":             "./dist/images/",
     "siteTitle":           "Vivien Kaufinger — Front-end developer",
     "siteDescription":     "Vivien Kaufinger — Front-end developer based in Paris. I build websites focusing fluidity, clean markup and performances.",
     "trackingID":          "",
