@@ -38,11 +38,6 @@
                 this.fitRect = new Path.Rectangle(this.position, this.size);
                 // this.fitRect.strokeColor = 'blue';
 
-                // Reduce shapes size with scale on tablet and mobile layouts
-                if (vw < 1024) {
-                    this.fitRect.scale(0.65);
-                }
-
                 // Create the shape
                 this.shapeGen();
 
