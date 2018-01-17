@@ -28,50 +28,13 @@
             margin: 5px 0 0;
             column-count: 2;
         }
-        a {
-            transition: color 250ms cubic-bezier($easing);
-            &:hover {
-                color: colors(tomatoe);
-            }
-        }
     }
     @include mq($from: sm) {
         margin-top: 10px;
     }
-    @include mq($from: lg) {
-        a {
-            position: relative;
-            display: block;
-            margin: -15px 0 -15px -15px;
-            padding: 15px;
-            transition: color 250ms cubic-bezier($easing);
-            &::before {
-                position: absolute;
-                z-index: -1;
-                pointer-events: none;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: #fff;
-                transition: opacity 250ms cubic-bezier($easing);
-                content: "";
-            }
-            &:hover {
-                color: colors(title);
-                &::before {
-                    opacity: 0;
-                }
-            }
-        }
-    }
-    span {
-        display: table;
-    }
 }
 
 .list__item {
-    position: relative;
     color: colors(text);
     @include mq($until: sm) {
         font-size: 1.6rem;
@@ -82,9 +45,50 @@
     @include mq($from: md) {
         font-size: 3rem;
     }
+}
+
+.list__link {
+    display: block;
+    transition: color 250ms cubic-bezier($easing);
+    @include mq($from: lg) {
+        position: relative;
+    }
+    &:hover {
+        @include mq($until: lg) {
+            color: colors(tomatoe);
+        }
+        @include mq($from: lg) {
+            color: colors(title);
+        }
+    }
     sup {
-        display: inline-block;
         margin-left: 5px;
         font-size: 1.1rem;
+    }
+}
+
+.list__icon {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    top: 50%;
+    mix-blend-mode: multiply;
+    transform: scale(0.5);
+    opacity: 0;
+    &--1 {
+        left: 50%;
+        width: 70px;
+        height: 60px;
+        margin-top: -30px;
+        margin-left: -55px;
+        fill: rgba(#eaeaea, .9);
+    }
+    &--2 {
+        right: 50%;
+        width: 50px;
+        height: 50px;
+        margin-top: -40px;
+        margin-right: -65px;
+        fill: rgba(#a172f3, .9);
     }
 }

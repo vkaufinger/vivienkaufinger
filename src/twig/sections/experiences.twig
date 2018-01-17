@@ -9,8 +9,14 @@
                     {% for experience in data.experiences %}
                         <li class="col-xs-12  col-sm-3  list__item">
                             <span class="js-item">
-                                <a href="{{- experience.url -}}" target="_blank" rel="noopener">
+                                <a class="list__link  js-list-link" href="{{- experience.url -}}" target="_blank" rel="noopener">
                                     {{- experience.name -}}<sup>{{- experience.year -}}</sup>
+                                    <svg class="list__icon  list__icon--1" aria-hidden="true">
+                                        <use xlink:href="#blob_1"></use>
+                                    </svg>
+                                    <svg class="list__icon  list__icon--2" aria-hidden="true">
+                                        <use xlink:href="#blob_2"></use>
+                                    </svg>
                                 </a>
                             </span>
                         </li>
