@@ -5,7 +5,6 @@
     * Utilitaries
     */
     var myModule = function () {
-        var isMobile = require('ismobilejs');
         var Parallax = require('./smooth-scroll').Parallax;
         var vw = window.innerWidth;
         var vh = window.innerHeight;
@@ -46,9 +45,8 @@
                 native: false,
                 section: wrapper,
                 divs: parallaxEls,
-                ease: isMobile.any ? 0.1 : 0.075,
                 vs: {
-                    mouseMultiplier: 0.25,
+                    mouseMultiplier: navigator.platform === 'MacIntel' ? 0.25 : 1,
                     touchMultiplier: 2.75
                 }
             });
