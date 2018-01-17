@@ -53,6 +53,9 @@
     @include mq($from: lg) {
         font-size: 5rem;
     }
+    strong {
+        font-weight: inherit;
+    }
 }
 
 .header__description {
