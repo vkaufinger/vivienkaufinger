@@ -63,7 +63,12 @@
     }
     sup {
         margin-left: 5px;
-        font-size: 1.1rem;
+        @include mq($until: sm) {
+            font-size: .9rem;
+        }
+        @include mq($from: sm) {
+            font-size: 1.1rem;
+        }
     }
 }
 
