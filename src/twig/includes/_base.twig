@@ -35,6 +35,14 @@
         </title>
         <link rel="canonical" href="{{ data.siteRoot }}" />
         <link href="./dist/styles/main.min.css?v={{ 'now'|date('U') }}" rel="stylesheet">
+        {%- if data.trackingID is not empty -%}
+            <script>
+                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                ga('create', '{{ data.trackingID }}', 'auto');
+                ga('send', 'pageview');
+            </script>
+            <script async src="https://www.google-analytics.com/analytics.js"></script>
+        {%- endif -%}
     </head>
     <body class="blobs-loading">
         <div class="svg-sprite">
@@ -49,14 +57,5 @@
         </div>
         <canvas id="blob-canvas" class="blobs"></canvas>
         <script defer src="./dist/scripts/main.min.js?v={{ 'now'|date('U') }}" charset="utf-8"></script>
-        {%- if data.trackingID is not empty -%}
-            <script async src="https://www.googletagmanager.com/gtag/js?id={{ data.trackingID }}"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '{{ data.trackingID }}');
-            </script>
-        {%- endif -%}
     </body>
 </html>
