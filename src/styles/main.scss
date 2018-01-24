@@ -1,7 +1,7 @@
-@import "general/vars";
+@import "general/init";
 
-@import "general/helpers";
+@import "vendor/init";
+
+@import "transversal/init";
 
 @import "sections/init";
-
-@import "transversal/footer";

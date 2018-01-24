@@ -1,10 +1,11 @@
 'use strict';
 
-const gulp = require('gulp');
-const $ = require('gulp-load-plugins')();
-const del = require('del');
-const fs = require('fs');
-const stylish = require('jshint-stylish');
+const gulp     = require('gulp');
+const $        = require('gulp-load-plugins')();
+const argv     = require('yargs').argv;
+const stylish  = require('jshint-stylish');
+const fs       = require('fs');
+const critical = require('critical').stream;
 
 const paths = {
     src: __dirname + '/src/',
@@ -22,14 +23,15 @@ const plumberErrorHandler = {
     }
 };
 
-var env;
-
 
 /**
-* CLEAN
+* CLEAN FOLDERS
 */
-gulp.task('clean', function () {
-    del.sync([paths.dist + '*', './*.html']);
+gulp.task('clean', () => {
+    return gulp
+        .src([paths.dist + '*', '*.html'], { read: false })
+        .pipe($.clean())
+    ;
 });
 
 
@@ -37,18 +39,17 @@ gulp.task('clean', function () {
 * IMAGES
 */
 
-//Copy images in dist directory
-gulp.task('imgCopy', function () {
+// Copy static images in dist directory
+function imgCopy () {
     return gulp
         .src(['**/*', '!svg-icons', '!svg-icons/*'], { cwd: paths.src + 'images/' })
         .pipe(gulp.dest('images', { cwd: paths.dist }))
         .pipe($.livereload())
     ;
-});
+}
 
-
-//Generate svg sprite
-gulp.task('imgSvg', function () {
+// Generate svg sprite
+function svgSprite () {
     return gulp
         .src('*.svg', { cwd: paths.src + 'images/svg-icons/' })
         .pipe($.svgmin({
@@ -58,28 +59,50 @@ gulp.task('imgSvg', function () {
                         remove: true,
                         minify: true
                     }
-                }, {
-                    removeTitle: true
-                }
+                },
+                { removeTitle: true }
             ]
         }))
         .pipe($.svgstore({
             inlineSvg: true
         }))
-        .pipe($.rename('svg-icons.twig'))
+        .pipe($.rename('svg-sprite.twig'))
         .pipe(gulp.dest('images', { cwd: paths.dist }))
         .pipe($.livereload())
     ;
-});
-gulp.task('images', ['imgCopy']);
+}
+
+gulp.task('images', gulp.parallel(imgCopy, svgSprite));
 
 
 /**
-* JS
+* TEMPLATING
+*/
+function twig () {
+    return gulp
+        .src('*.twig', { cwd: paths.src + 'twig' })
+        .pipe($.plumber(plumberErrorHandler))
+        .pipe($.twig({
+            errorLogToConsole: false,
+            data: {
+                data: JSON.parse(fs.readFileSync('./datas/data.json'))
+            }
+        }))
+        .pipe($.htmlBeautify())
+        .pipe(gulp.dest('.'))
+        .pipe($.livereload())
+    ;
+}
+
+gulp.task('templating', gulp.series(twig));
+
+
+/**
+* SCRIPTS
 */
 
-//Check synthax of all modules
-gulp.task('jsHint', function () {
+// Check synthax of all modules
+function jsHint () {
     return gulp
         .src('**/*.js', { cwd: paths.src + 'scripts/' })
         .pipe($.jshint({
@@ -89,15 +112,15 @@ gulp.task('jsHint', function () {
         }))
         .pipe($.jshint.reporter(stylish))
     ;
-});
+}
 
-//Browserify + minify main js file
-gulp.task('jsModules', ['jsHint'], function () {
+// Browserify + minify main js file
+function jsModules () {
     return gulp
         .src('*.js', { cwd: paths.src + 'scripts/' })
         .pipe($.plumber(plumberErrorHandler))
         .pipe($.browserify2())
-        .pipe($.if(env !== 'dev', $.uglifyEs.default({
+        .pipe($.if(argv.prod, $.uglifyes({
             mangle: {
                 reserved: ['Smooth']
             }
@@ -106,25 +129,26 @@ gulp.task('jsModules', ['jsHint'], function () {
         .pipe(gulp.dest('scripts', { cwd: paths.dist }))
         .pipe($.livereload())
     ;
-});
-gulp.task('js', ['jsModules']);
+}
+
+gulp.task('js', gulp.series(jsHint, jsModules))
 
 
 /**
 * STYLES
 */
 
-//Copy fonts
-gulp.task('fontCopy', function () {
+// Copy fonts in dist directory
+function fontCopy () {
     return gulp
         .src('**/*', { cwd: paths.src + 'fonts/' })
         .pipe(gulp.dest('fonts', { cwd: paths.dist }))
         .pipe($.livereload())
     ;
-});
+}
 
-//Compile sass + autroprefixer + merge media queries
-gulp.task('css', function () {
+// Compile sass + autoprefixer + merge media queries + minify css
+function css () {
     return gulp
         .src('*.scss', { cwd: paths.src + 'styles/' })
         .pipe($.plumber(plumberErrorHandler))
@@ -136,68 +160,54 @@ gulp.task('css', function () {
             comments: false,
             forceMediaMerge: true
         }))
+        .pipe($.rename('main.min.css'))
+        .pipe($.if(argv.prod, $.uncss({
+            html: ['*.html']
+        })))
         .pipe(gulp.dest('styles', { cwd: paths.dist }))
         .pipe($.livereload())
     ;
-});
+}
 
-gulp.task('styles', ['fontCopy', 'css']);
+gulp.task('styles', gulp.parallel(fontCopy, css));
 
-//TWIG
-gulp.task('twig', ['styles', 'imgSvg'], function () {
+
+function criticalPath () {
     return gulp
-		.src(['*.twig'], { cwd: paths.src + 'twig' })
-        .pipe($.plumber(plumberErrorHandler))
-        .pipe($.twig({
-            errorLogToConsole: false,
-            data: {
-                data: JSON.parse(fs.readFileSync('./datas/data.json'))
-            }
+        .src('*.html')
+        .pipe(critical({
+            inline: true,
+            css: ['dist/styles/main.min.css']
         }))
         .pipe(gulp.dest('.'))
-        .pipe($.livereload())
     ;
-});
-
-// Compile twig + inject css
-gulp.task('templating', ['twig'], function () {
-    return gulp
-        .src('./*.html')
-        .pipe($.injectCss())
-        .pipe(gulp.dest('.'))
-    ;
-});
+}
 
 
 /**
 * BUILD
 */
-gulp.task('build', ['clean', 'images', 'js', 'styles', 'templating']);
 
-gulp.task('default', ['build'], function () {
+function completeBuild (done) {
     $.notify({
         message : 'Compile is succeed :-)',
         sound: 'Glass'
     })
-    .write('');
-});
+    .write('', done);
+}
 
-//WATCH FILES BY TYPE
-gulp.task('watch', ['build'], function () {
-    env = 'dev';
-    // Images
-    gulp.watch(['**/*', '!svg-icons', '!svg-icons/*'], { cwd: paths.src + 'images/' }, ['imgCopy']);
-    gulp.watch('*.svg', { cwd: paths.src + 'images/svg-icons' }, ['templating']);
-    // Fonts
-    gulp.watch('**/*', { cwd: paths.src + 'fonts/' }, [ 'fontCopy' ]);
-    // CSS
-    gulp.watch('**/*', { cwd: paths.src + 'styles/' }, [ 'templating' ]);
-    // JS
-    gulp.watch('**/*', { cwd: paths.src + 'scripts/modules/' }, [ 'js' ]);
-    // Twig
-    gulp.watch('**/*', { cwd: 'datas/' }, [ 'templating' ]);
-    gulp.watch('**/*', { cwd: paths.src + 'twig/' }, [ 'templating' ]);
+gulp.task('default', gulp.series('clean', 'images', 'templating', gulp.parallel('js', 'styles'), criticalPath, completeBuild));
+
+
+/**
+* WATCH FILES BY TYPE
+*/
+function watch () {
+    gulp.watch('**/*.scss', { cwd: paths.src + 'styles/' },          gulp.series(css));
+    gulp.watch('**/*.js',   { cwd: paths.src + 'scripts/modules/' }, gulp.series('js'));
+    gulp.watch('**/*',      { cwd: paths.src + 'images/' },          gulp.series('images'));
+    gulp.watch('**/*',      { cwd: paths.src + 'fonts/' },           gulp.series(fontCopy));
+    gulp.watch('**/*.twig', { cwd: paths.src + 'twig/' },            gulp.series('templating'));
     $.livereload({ start: true });
-});
-
-gulp.task('w', ['watch']);
+}
+gulp.task('w', gulp.series('clean', 'images', 'templating', gulp.parallel('js', 'styles'), watch));

@@ -34,11 +34,11 @@
             {%- endif -%}
         </title>
         <link rel="canonical" href="{{ data.siteRoot }}" />
-        <!-- inject-css dist/styles/critical.css -->
+        <link href="./dist/styles/main.min.css?v={{ 'now'|date('U') }}" rel="stylesheet">
     </head>
     <body class="blobs-loading">
         <div class="svg-sprite">
-            {%- include '../../../dist/images/svg-icons.twig' ignore missing -%}
+            {%- include '../../../dist/images/svg-sprite.twig' ignore missing -%}
         </div>
         <div id="main-wrapper" class="main-wrapper  vs-section">
             {% include './header.twig' %}
@@ -48,7 +48,6 @@
             {% include './footer.twig' %}
         </div>
         <canvas id="blob-canvas" class="blobs"></canvas>
-        <link href="./dist/styles/main.css?v={{ 'now'|date('U') }}" rel="stylesheet">
         <script defer src="./dist/scripts/main.min.js?v={{ 'now'|date('U') }}" charset="utf-8"></script>
         {%- if data.trackingID is not empty -%}
             <script async src="https://www.googletagmanager.com/gtag/js?id={{ data.trackingID }}"></script>
