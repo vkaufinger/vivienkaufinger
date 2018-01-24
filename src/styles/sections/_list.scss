@@ -10,13 +10,13 @@
 
 .list-section {
     @include mq($until: sm) {
-        margin-top: 15vh;
+        padding-top: 15vh;
     }
     @include mq($from: sm, $until: lg) {
-        margin-top: 20vh;
+        padding-top: 20vh;
     }
     @include mq($from: lg) {
-        margin-top: 25vh;
+        padding-top: 25vh;
     }
 }
 

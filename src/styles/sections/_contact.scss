@@ -1,12 +1,12 @@
 .contact {
     @include mq($until: sm) {
-        margin: 15vh 0 10vh;
+        padding: 15vh 0 10vh;
     }
     @include mq($from: sm, $until: lg) {
-        margin: 20vh 0 30vh;
+        padding: 20vh 0 30vh;
     }
     @include mq($from: lg) {
-        margin: 25vh 0 30vh;
+        padding: 25vh 0 30vh;
     }
 }
 
