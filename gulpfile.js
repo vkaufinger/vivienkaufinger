@@ -213,6 +213,7 @@ function watch () {
     gulp.watch('**/*',      { cwd: paths.src + 'images/' },          gulp.series('images'));
     gulp.watch('**/*',      { cwd: paths.src + 'fonts/' },           gulp.series(fontCopy));
     gulp.watch('**/*.twig', { cwd: paths.src + 'twig/' },            gulp.series('templating'));
+    gulp.watch('*.json',    { cwd: 'datas/' },                       gulp.series('templating'));
     $.livereload({ start: true });
 }
 gulp.task('w', gulp.series('clean', 'images', 'templating', gulp.parallel('js', 'styles'), watch));
