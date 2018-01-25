@@ -162,7 +162,12 @@ function css () {
         }))
         .pipe($.rename('main.min.css'))
         .pipe($.if(argv.prod, $.uncss({
-            html: ['*.html']
+            html: ['*.html'],
+            ignore: [
+                new RegExp('^\.vs-.*'),
+                new RegExp('^\.is-.*')
+
+            ]
         })))
         .pipe(gulp.dest('styles', { cwd: paths.dist }))
         .pipe($.livereload())
