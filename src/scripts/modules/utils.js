@@ -63,11 +63,6 @@
         }
 
 
-        function resize () {
-            smooth.resize();
-        }
-
-
         function onScroll (direction, scrollY) {
             if (!smooth.options.divs) {
                 return;
@@ -96,7 +91,6 @@
         return {
             name: globName,
             ready: ready,
-            resize: resize,
             onScroll: onScroll
         };
     }();
