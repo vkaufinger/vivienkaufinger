@@ -6,21 +6,11 @@
                     {{- 'Skills' -}}
                 </h2>
                 <ul class="list  row">
-                    <li class="list__item  col-sm-4">
-                        {% for skill in data.skills|slice(0, 3) %}
+                    {% for skill in data.skills %}
+                        <li class="col-xs  list__item">
                             <span class="js-item">{{- skill -}}</span>
-                        {% endfor %}
-                    </li>
-                    <li class="list__item  col-sm-4">
-                        {% for skill in data.skills|slice(3, 3) %}
-                            <span class="js-item">{{- skill -}}</span>
-                        {% endfor %}
-                    </li>
-                    <li class="list__item  col-sm-4">
-                        {% for skill in data.skills|slice(6, 3) %}
-                            <span class="js-item">{{- skill -}}</span>
-                        {% endfor %}
-                    </li>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

@@ -23,20 +23,37 @@
 .list {
     @include mq($until: sm) {
         margin-top: 5px;
-        .skills & {
-            display: block; // Disable flexbox
-            margin: 5px 0 0;
-            column-count: 2;
-        }
     }
     @include mq($from: sm) {
         margin-top: 10px;
+    }
+    .other-projects & {
+        max-width: 280px;
+    }
+    .experiences & {
+        display: block; // Disable flexbox
+        @include mq($until: sm) {
+            column-count: 1;
+        }
+        @include mq($from: sm) {
+            column-count: 3;
+        }
+    }
+    .skills & {
+        display: block; // Disable flexbox
+        @include mq($until: sm) {
+            column-count: 2;
+        }
+        @include mq($from: sm) {
+            column-count: 3;
+        }
     }
 }
 
 .list__item {
     color: colors(text);
     @include mq($until: sm) {
+        margin-bottom: 5px;
         font-size: 1.6rem;
     }
     @include mq($from: sm, $until: md) {
@@ -44,6 +61,10 @@
     }
     @include mq($from: md) {
         font-size: 3rem;
+        .other-projects & {
+            margin-bottom: 5px;
+            font-size: 2rem;
+        }
     }
 }
 
@@ -59,15 +80,27 @@
         }
         @include mq($from: lg) {
             color: colors(title);
+            sup {
+                opacity: 1;
+                transform: translateX(0px);
+            }
         }
     }
     sup {
+        display: inline-block;
         margin-left: 5px;
         @include mq($until: sm) {
-            font-size: .9rem;
+            font-size: 1rem;
         }
         @include mq($from: sm) {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+        }
+        @include mq($from: lg) {
+            opacity: 0;
+            transform: translateX(5px);
+            transition: 350ms cubic-bezier($easing);
+            transition-property: opacity, transform;
+            backface-visibility: hidden;
         }
     }
 }

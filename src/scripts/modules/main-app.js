@@ -9,8 +9,7 @@
         var modules = [
             require('./utils'),
             require('./blobs'),
-            require('./projects'),
-            require('./experiences')
+            require('./projects')
         ];
 
         /**

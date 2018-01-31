@@ -4,7 +4,7 @@
             {{- 'Selected projects' -}}
         </h2>
         <div class="projects__list">
-            {% for project in data.projects %}
+            {% for project in data.projects if project.description is not empty %}
                 <article class="project  row  center-xs  middle-lg">
                     <header class="project__header  col-xs-12" data-speed="-0.25">
                         <h3 class="project__title">

@@ -7,16 +7,10 @@
                 </h2>
                 <ul class="list  row">
                     {% for experience in data.experiences %}
-                        <li class="col-xs-12  col-sm-3  list__item">
+                        <li class="col-xs  list__item">
                             <span class="js-item">
-                                <a class="list__link  js-list-link" href="{{- experience.url -}}" target="_blank" rel="noopener">
-                                    {{- experience.name -}}<sup>{{- experience.year -}}</sup>
-                                    <svg class="list__icon  list__icon--1" aria-hidden="true">
-                                        <use xlink:href="#blob_1"></use>
-                                    </svg>
-                                    <svg class="list__icon  list__icon--2" aria-hidden="true">
-                                        <use xlink:href="#blob_2"></use>
-                                    </svg>
+                                <a class="list__link  list__link--underline" href="{{- experience.url -}}" target="_blank" rel="noopener">
+                                    {{- experience.name -}}<sup>{{ experience.year }}</sup>
                                 </a>
                             </span>
                         </li>

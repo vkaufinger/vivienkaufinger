@@ -8,7 +8,7 @@
         var Parallax = require('./smooth-scroll').Parallax;
         var vw = window.innerWidth;
         var vh = window.innerHeight;
-        var offset = vh * 0.5;
+        var offset = vh * 0.25;
         var smooth;
         var pre;
 
@@ -68,17 +68,17 @@
                 return;
             }
 
-            smooth.options.divs.forEach((el) => {
-                if (!el.matches('.js-section')) {
+            smooth.options.divs.forEach((div) => {
+                if (!div.matches('.js-section')) {
                     return;
                 }
 
-                var items = el.querySelectorAll('.js-item');
+                var items = div.querySelectorAll('.js-item');
 
-                if (el.classList.contains('in-view')) {
-                    var top = el.getBoundingClientRect().top;
+                if (div.classList.contains('in-view')) {
+                    var top = div.getBoundingClientRect().top;
                     var transform = (top - offset) / (vh - offset);
-                    transform = Math.max(0, Math.min(transform, 1)).toFixed(2);
+                    transform = Math.max(0, Math.min(transform, 1));
 
                     items.forEach((el) => {
                         el.style.transform = 'skewX(' + -25 * transform + 'deg) rotate(' + -25 * transform + 'deg)';
