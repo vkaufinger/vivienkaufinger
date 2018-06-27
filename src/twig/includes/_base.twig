@@ -34,7 +34,7 @@
             {%- endif -%}
         </title>
         <link rel="canonical" href="{{ data.siteRoot }}" />
-        <link href="./dist/styles/main.min.css?v={{ 'now'|date('U') }}" rel="stylesheet">
+        <link href="./main.css?v={{ 'now'|date('U') }}" rel="stylesheet">
         {%- if data.trackingID is not empty -%}
             <script>
                 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -53,6 +53,6 @@
             {% include './footer.twig' %}
         </div>
         <canvas id="blob-canvas" class="blobs"></canvas>
-        <script defer src="./dist/scripts/main.min.js?v={{ 'now'|date('U') }}" charset="utf-8"></script>
+        <script defer src="./main.js?v={{ 'now'|date('U') }}" charset="utf-8"></script>
     </body>
 </html>
