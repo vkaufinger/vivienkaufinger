@@ -1,0 +1,20 @@
+{
+    "env": {
+        "amd": true,
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "rules": {
+        "constructor-super": "warn",
+        "indent": ["warn", 4],
+        "no-console": "warn",
+        "no-const-assign": "error",
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unreachable": "warn",
+        "no-unused-vars": "warn",
+        "quotes": ["warn", "single"],
+        "valid-typeof": "warn"
+    }
+}

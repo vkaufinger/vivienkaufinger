@@ -1,99 +1,101 @@
 {
-    "siteRoot":        "https://vivienkaufinger.com",
-    "imgPath":         "./dist/images/",
-    "siteTitle":       "Vivien Kaufinger — Front-end developer",
-    "siteDescription": "Vivien Kaufinger — Front-end developer based in Paris. I build user interfaces focusing fluidity, clean markup and performances.",
-    "trackingID":      "UA-112497881-1",
-    "projects": [
-        {
-            "title":       "W2P digital",
-            "poster":      "w2p_digital.jpg",
-            "video":       "w2p_digital.mp4",
-            "client":      "W2P Digital",
-            "description": "Agency portfolio",
-            "year":        "2017",
-            "team":        "W2P",
-            "color":       "#0101ee",
-            "url":         "https://www.w2p-digital.com"
-        },
-        {
-            "title":       "Klorane apaise",
-            "poster":      "klorane_apaise.jpg",
-            "video":       "klorane_apaise.mp4",
-            "client":      "Pierre Fabre",
-            "description": "Website experience",
-            "year":        "2017",
-            "team":        "W2P",
-            "color":       "#db8597",
-            "url":         "https://kloraneapaise.klorane.com/"
-        },
-        {
-            "title":       "I fly A380",
-            "poster":      "i_fly_a380.jpg",
-            "video":       "i_fly_a380.mp4",
-            "client":      "Airbus",
-            "description": "Booking website",
-            "year":        "2015",
-            "team":        "X-Prime",
-            "color":       "#334ba8",
-            "url":         "https://www.iflya380.com/"
-        },
-        {
-            "title":       "Pas de guts, pas de glory",
-            "year":        "2016",
-            "url":         "https://pasdegutspasdeglory.com/"
-        },
-        {
-            "title":       "Financement BMW",
-            "year":        "2015",
-            "url":         "http://financement-bmw.fr/"
-        },
-        {
-            "title":       "Krug Champagne",
-            "year":        "2014",
-            "url":         "https://www.krug.com"
-        },
-        {
-            "title":       "W2P Production",
-            "year":        "2017",
-            "url":         "https://www.w2p-production.com/"
-        },
-        {
-            "title":       "Airbus BizLab",
-            "year":        "2015",
-            "url":         "https://www.airbus-bizlab.com/"
-        },
-        {
-            "title":       "Level Shoes",
-            "year":        "2015",
-            "url":         "https://www.levelshoes.com/"
-        },
-        {
-            "title":       "OM.net",
-            "year":        "2015",
-            "url":         "https://www.om.net/"
-        }
-    ],
-    "experiences": [
-        { "name": "W2P",      "url": "https://www.w2p-digital.com",   "year": "2016" },
-        { "name": "X-Prime",  "url": "https://www.xprimegroupe.com/", "year": "2013" },
-        { "name": "Overblog", "url": "https://www.over-blog.com/",    "year": "2012" }
-    ],
-    "skills": [
-        "BEM",
-        "Canvas",
-        "Git",
-        "GSAP",
-        "Gulp",
-        "SCSS",
-        "SVG",
-        "Twig",
-        "Vanilla JS"
-    ],
-    "contactLink": "mailto:hello@vivienkaufinger.com",
-    "iconLinks": [
-        { "title": "twitter",  "url" : "https://twitter.com/vivienkaufinger" },
-        { "title": "linkedin", "url" : "https://www.linkedin.com/in/vivien-kaufinger-b37b8561" },
-        { "title": "github",   "url" : "https://github.com/vkaufinger" }
-    ]
+    "data": {
+        "siteRoot":        "https://vivienkaufinger.com",
+        "imgPath":         "./images/",
+        "siteTitle":       "Vivien Kaufinger — Front-end developer",
+        "siteDescription": "Vivien Kaufinger — Front-end developer based in Paris. I build user interfaces focusing fluidity, clean markup and performances.",
+        "trackingID":      "UA-112497881-1",
+        "projects": [
+            {
+                "title":       "W2P digital",
+                "poster":      "w2p_digital.jpg",
+                "video":       "w2p_digital.mp4",
+                "client":      "W2P Digital",
+                "description": "Agency portfolio",
+                "year":        "2017",
+                "team":        "W2P",
+                "color":       "#0101ee",
+                "url":         "https://www.w2p-digital.com"
+            },
+            {
+                "title":       "Klorane apaise",
+                "poster":      "klorane_apaise.jpg",
+                "video":       "klorane_apaise.mp4",
+                "client":      "Pierre Fabre",
+                "description": "Website experience",
+                "year":        "2017",
+                "team":        "W2P",
+                "color":       "#db8597",
+                "url":         "https://kloraneapaise.klorane.com/"
+            },
+            {
+                "title":       "I fly A380",
+                "poster":      "i_fly_a380.jpg",
+                "video":       "i_fly_a380.mp4",
+                "client":      "Airbus",
+                "description": "Booking website",
+                "year":        "2015",
+                "team":        "X-Prime",
+                "color":       "#334ba8",
+                "url":         "https://www.iflya380.com/"
+            },
+            {
+                "title":       "Pas de guts, pas de glory",
+                "year":        "2016",
+                "url":         "https://pasdegutspasdeglory.com/"
+            },
+            {
+                "title":       "Financement BMW",
+                "year":        "2015",
+                "url":         "http://financement-bmw.fr/"
+            },
+            {
+                "title":       "Krug Champagne",
+                "year":        "2014",
+                "url":         "https://www.krug.com"
+            },
+            {
+                "title":       "W2P Production",
+                "year":        "2017",
+                "url":         "https://www.w2p-production.com/"
+            },
+            {
+                "title":       "Airbus BizLab",
+                "year":        "2015",
+                "url":         "https://www.airbus-bizlab.com/"
+            },
+            {
+                "title":       "Level Shoes",
+                "year":        "2015",
+                "url":         "https://www.levelshoes.com/"
+            },
+            {
+                "title":       "OM.net",
+                "year":        "2015",
+                "url":         "https://www.om.net/"
+            }
+        ],
+        "experiences": [
+            { "name": "W2P",      "url": "https://www.w2p-digital.com",   "year": "2016" },
+            { "name": "X-Prime",  "url": "https://www.xprimegroupe.com/", "year": "2013" },
+            { "name": "Overblog", "url": "https://www.over-blog.com/",    "year": "2012" }
+        ],
+        "skills": [
+            "BEM",
+            "Canvas",
+            "Git",
+            "GSAP",
+            "Gulp",
+            "SCSS",
+            "SVG",
+            "Twig",
+            "Vanilla JS"
+        ],
+        "contactLink": "mailto:hello@vivienkaufinger.com",
+        "iconLinks": [
+            { "title": "twitter",  "url" : "https://twitter.com/vivienkaufinger" },
+            { "title": "linkedin", "url" : "https://www.linkedin.com/in/vivien-kaufinger-b37b8561" },
+            { "title": "github",   "url" : "https://github.com/vkaufinger" }
+        ]
+    }
 }
