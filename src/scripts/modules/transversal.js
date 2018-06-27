@@ -24,7 +24,7 @@
             const moveX = mouse.x - bounding.left - (bounding.width * 0.5);
             const moveY = mouse.y - bounding.top - (bounding.height * 0.5);
 
-            TweenMax.to(icon, 0.25, { x: moveX /2 + 'px', y: moveY /2 + 'px', ease:Linear.easeNone });
+            TweenMax.to(icon, 0.25, { x: moveX /2 + 'px', y: moveY /2 + 'px', ease: 'Linear.easeNone' });
         }
 
 
@@ -35,11 +35,11 @@
 
             iconLinks.forEach((link) => {
 
-                link.addEventListener('mouseenter', (e) => {
+                link.addEventListener('mouseenter', () => {
                     TweenMax.ticker.addEventListener('tick', animateIcon, link);
                 });
 
-                link.addEventListener('mouseleave', (e) => {
+                link.addEventListener('mouseleave', () => {
                     TweenMax.ticker.removeEventListener('tick', animateIcon);
 
                     // Restore icon position

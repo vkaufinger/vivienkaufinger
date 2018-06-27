@@ -10,8 +10,6 @@
         var vh = window.innerHeight;
         var offset = vh * 0.25;
         var smooth;
-        var pre;
-
 
         // Preload all media on window load
         function deferLoading () {
@@ -63,7 +61,7 @@
         }
 
 
-        function onScroll (direction, scrollY) {
+        function onScroll () {
             if (!smooth.options.divs) {
                 return;
             }

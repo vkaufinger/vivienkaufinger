@@ -5,7 +5,6 @@
     * Projects
     */
     var myModule = function () {
-        var vw = window.innerWidth;
         var vh = window.innerHeight;
         var offset = vh * 0.35;
         var smooth;
@@ -56,7 +55,7 @@
         }
 
 
-        function onScroll (direction, scrollY) {
+        function onScroll () {
             if (!smooth.options.divs) {
                 return;
             }
@@ -69,7 +68,6 @@
 
 
         function resize () {
-            vw = window.innerWidth;
             vh = window.innerHeight;
         }
 

@@ -18,8 +18,7 @@
                 this.dom.divs = Array.prototype.slice.call(opt.divs, 0);
             }
             createExtraBound () {
-                ['getCache', 'inViewport']
-                .forEach((fn) => this[fn] = this[fn].bind(this));
+                ['getCache', 'inViewport'].forEach((fn) => this[fn] = this[fn].bind(this));
             }
             resize () {
                 this.resizing = true;
@@ -33,7 +32,7 @@
             getCache () {
                 this.cache = [];
 
-                this.dom.divs.forEach((el, index) => {
+                this.dom.divs.forEach((el) => {
                     el.style.display = 'block';
                     el.style.transform = 'none';
 

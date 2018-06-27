@@ -166,7 +166,7 @@
             var introShapes = shapes.filter(el => el.section === 'intro');
 
             introShapes.forEach((el, index) => {
-                TweenMax.fromTo(el.blob.group.position, 1.5, { y: -scene.view.size.height }, { delay: 0.1 * index, y: el.blob.scrollY, ease: Power4.easeOut, onComplete: () => {
+                TweenMax.fromTo(el.blob.group.position, 1.5, { y: -scene.view.size.height }, { delay: 0.1 * index, y: el.blob.scrollY, ease: 'Power4.easeOut', onComplete: () => {
                     if (blobsAreReady) {
                         return;
                     }

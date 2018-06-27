@@ -17,7 +17,7 @@
         * Modules "magic" methods bindings
         */
         function modMagic() {
-            document.addEventListener('DOMContentLoaded', function (e) {
+            document.addEventListener('DOMContentLoaded', function () {
                 // DOM ready
                 modules.forEach(function (module) {
                     if (typeof module.ready !== 'undefined') {
@@ -43,7 +43,7 @@
 
 
             // Ajax start
-            document.addEventListener('pjax:complete', function (e) {
+            document.addEventListener('pjax:complete', function () {
                 modules.forEach(function (module) {
                     if (typeof module.ajaxStart !== 'undefined') {
                         module.ajaxStart();
