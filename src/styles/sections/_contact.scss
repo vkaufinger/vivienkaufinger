@@ -71,20 +71,34 @@
 
 .contact__link-icon {
     position: relative;
-    fill: colors(grape);
-    transition: 600ms cubic-bezier($easing);
+    background: svg-load('../images/svg-icons/arrow.svg', fill=colors(grape)) no-repeat center center / contain;
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        background-image: svg-load('../images/svg-icons/arrow.svg', fill=colors(tomato));
+        opacity: 0;
+        content: "";
+        @include mq($from: sm) {
+            transition: opacity 600ms cubic-bezier($easing);
+            :hover > & {
+                opacity: 1;
+            }
+        }
+    }
     @include mq($until: sm) {
         width: 5px;
         height: 10px;
-        transition-property: fill;
     }
     @include mq($from: sm) {
         width: 10px;
         height: 16px;
-        transition-property: fill, transform;
+        transition: transform 600ms cubic-bezier($easing);
     }
     :hover > & {
-        fill: colors(tomato);
         @include mq($from: sm) {
             transform: translateX(22px);
         }

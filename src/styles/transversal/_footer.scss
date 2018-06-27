@@ -8,11 +8,16 @@
         }
     }
     .icon-links__icon {
-        @include mq($until: md) {
-            fill: colors(text);
+        &--twitter {
+            background-image: svg-load('../images/svg-icons/twitter.svg', fill=colors(text));
         }
-        @include mq($from: md) {
-            fill: colors(text);
+
+        &--linkedin {
+            background-image: svg-load('../images/svg-icons/linkedin.svg', fill=colors(text));
+        }
+
+        &--github {
+            background-image: svg-load('../images/svg-icons/github.svg', fill=colors(text));
         }
     }
 }

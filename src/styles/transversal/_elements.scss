@@ -60,6 +60,8 @@
 
 .icon-links__icon {
     display: block;
+    background: no-repeat center center / contain;
+    font-size: 0;
     @include mq($until: sm) {
         width: 25px;
         height: 25px;
@@ -71,6 +73,18 @@
     @include mq($from: md) {
         width: 20px;
         height: 20px;
+    }
+
+    &--twitter {
+        background-image: svg-load('../images/svg-icons/twitter.svg', fill=#fff);
+    }
+
+    &--linkedin {
+        background-image: svg-load('../images/svg-icons/linkedin.svg', fill=#fff);
+    }
+
+    &--github {
+        background-image: svg-load('../images/svg-icons/github.svg', fill=#fff);
     }
 }
 

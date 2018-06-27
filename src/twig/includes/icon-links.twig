@@ -2,9 +2,9 @@
     {% for link in data.iconLinks %}
         <li class="icon-links__item  col-sm-1  col-md">
             <a class="icon-links__link" href="{{ link.url }}" target="_blank" rel="noopener">
-                <svg class="icon-links__icon" aria-hidden="true">
-                    <use xlink:href="#{{ link.title }}"></use>
-                </svg>
+                <span class="icon-links__icon  icon-links__icon--{{ link.title }}">
+                	{{- link.title|capitalize -}}
+                </span>
             </a>
         </li>
     {% endfor %}
