@@ -14,7 +14,7 @@
         <meta property="og:title" content="{{ data.siteTitle }}" />
         <meta property="og:url" content="{{ data.siteRoot }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="{{ data.siteRoot ~ '/dist/images/' }}static/og.jpg?v={{ 'now'|date('U') }}" />
+        <meta property="og:image" content="{{ data.siteRoot }}/images/static/og.jpg?v={{ 'now'|date('U') }}" />
         {%- if data.siteDescription is not empty -%}
             <meta property="og:description" content="{{ data.siteDescription }}" />
         {%- endif -%}
@@ -23,7 +23,7 @@
         <meta name="twitter:site" content="@vivienkaufinger" />
         <meta name="twitter:creator" content="@vivienkaufinger" />
         <meta name="twitter:title" content="@vivienkaufinger" />
-        <meta name="twitter:image" content="{{ data.siteRoot ~ '/dist/images/' }}static/og.jpg?v={{ 'now'|date('U') }}">
+        <meta name="twitter:image" content="{{ data.siteRoot }}/images/static/og.jpg?v={{ 'now'|date('U') }}">
         {%- if data.siteDescription is not empty -%}
             <meta name="twitter:description" content="{{ data.siteDescription }}" />
             <meta name="description" content="{{ data.siteDescription }}">
